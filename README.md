@@ -2,6 +2,6 @@
 
 Denise Buder, Martina Neureiter, Alexander Tischhart, Lukas Seiwald
 
-```npm install
+```npm install```
 
 ```npm start```
