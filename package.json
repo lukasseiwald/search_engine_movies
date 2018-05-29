@@ -1,0 +1,24 @@
+{
+  "name": "sem",
+  "version": "1.0.0",
+  "description": "Search engine for movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasseiwald/search_engine_movies.git"
+  },
+  "keywords": [
+    "search",
+    "engine",
+    "movies"
+  ],
+  "author": "Denise Buder, Martina Neureiter, Lukas Seiwald, Alexander Tischhart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukasseiwald/search_engine_movies/issues"
+  },
+  "homepage": "https://github.com/lukasseiwald/search_engine_movies#readme"
+}
