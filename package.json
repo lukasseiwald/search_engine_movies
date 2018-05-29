@@ -4,6 +4,7 @@
   "description": "Search engine for movies",
   "main": "index.js",
   "scripts": {
+    "start": "startserver -p 5001",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
