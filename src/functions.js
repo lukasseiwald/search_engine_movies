@@ -20,21 +20,26 @@ function searchForMovies(){
 function displayResults(results, searchString){
 
   let html = "";
+  html += `<p>${results.length} results found </p>`
 
-  html += `${results.length} results found for ${searchString}`;
-
+  for (let entry of results){
+    html += `<div class="result"> Title: ${entry} </div>`;
+  }
   document.getElementById("results").innerHTML = html;
 }
 
 function displayProposals(proposals){
   let html = "Did you mean: ";
-
   for (let entry of proposals){
-    html +=`<a href='#'>${entry}</a> `;
+    html +=`<a href='#' onclick='proposedSearch("${entry}")'>${entry}</a> `;
   }
-
   document.getElementById("proposals").innerHTML = html;
 
+}
+
+function proposedSearch(searchString){
+  document.getElementById("searchInput").value = searchString;
+  searchForMovies();
 }
 
 function getResults(searchString){
