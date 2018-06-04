@@ -21,7 +21,7 @@ const request = require('sync-request')
 let documents = []
 
 // read file through fs readstream
-const instream = fs.createReadStream('source/movies.json') // video file has to be named 'simplewiki.json'
+const instream = fs.createReadStream('src/movies.json') // video file has to be named 'simplewiki.json'
 const outstream = new stream
 const rl = readline.createInterface(instream, outstream)
 
