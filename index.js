@@ -44,8 +44,7 @@ rl.on('line', function(line) {
           outEntry["adult_txt_en"] = entry.isAdult
           outEntry["start_year_txt_en"] = entry.startYear
           outEntry["end_year_txt_en"] = entry.endYear
-          outEntry["genres_txt_sort"] = entry.genres
-          //outJson["genres_txt_sort"] = outJson["genres_txt_sort"].split(",")
+          outEntry["genres_txt_sort"] = entry.genres.split(",")
           // opening_text is optional
           // if(lineJson.opening_text) outJson["opening_txt_en"] = lineJson.opening_text
           // else outJson["opening_txt_en"] = ""
