@@ -1,4 +1,6 @@
-function searchForMovies(){
+const fs = require('fs')
+
+window.searchForMovies = function(){
   let searchString = document.getElementById("searchInput").value;
   if (searchString.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
@@ -17,7 +19,7 @@ function searchForMovies(){
   }
 }
 
-function displayResults(results, searchString){
+window.displayResults = function(results, searchString){
 
   let html = "";
   html += `<p>${results.length} results found </p>`
@@ -28,7 +30,7 @@ function displayResults(results, searchString){
   document.getElementById("results").innerHTML = html;
 }
 
-function displayProposals(proposals){
+window.displayProposals = function(proposals){
   let html = "Did you mean: ";
   for (let entry of proposals){
     html +=`<a href='#' onclick='proposedSearch("${entry}")'>${entry}</a> `;
@@ -37,15 +39,15 @@ function displayProposals(proposals){
 
 }
 
-function proposedSearch(searchString){
+window.proposedSearch = function(searchString){
   document.getElementById("searchInput").value = searchString;
   searchForMovies();
 }
 
-function getResults(searchString){
+window.getResults = function(searchString){
 
 }
 
-function getProposals(searchString){
+window.getProposals = function(searchString){
 
 }

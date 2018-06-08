@@ -4,10 +4,9 @@ const readline = require('readline')
 const stream = require('stream')
 const request = require('sync-request')
 
-
 //parse json
 // tsv({
-//   input: "source/name.basics.tsv",
+//   input: "source/name.basics.tsv", 
 //   output: "movies.json"
 //   //array of arrays, 1st array is column names
 //   ,parseRows: false
@@ -34,7 +33,7 @@ rl.on('line', function(line) {
         // extract only the relevant properties of the input JSON file
         const lineJson = JSON.parse(line);
         const outJson = []
-
+        
         lineJson.forEach(entry => {
           //console.log(entry)
           console.log("\n")
@@ -46,11 +45,10 @@ rl.on('line', function(line) {
           outEntry["start_year_txt_en"] = entry.startYear
           outEntry["end_year_txt_en"] = entry.endYear
           outEntry["genres_txt_sort"] = entry.genres.split(",")
-          outEntry["_txt_"] = entry.primaryTitle
           // opening_text is optional
           // if(lineJson.opening_text) outJson["opening_txt_en"] = lineJson.opening_text
           // else outJson["opening_txt_en"] = ""
-
+          
           //accumulate JSON objects before they are sent
           outJson.push(outEntry)
         })
