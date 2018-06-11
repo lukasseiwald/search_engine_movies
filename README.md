@@ -16,7 +16,7 @@
 
 https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 
-## Start Webpack
+## Start Frontend
 
 ```npm install```
 
@@ -24,8 +24,8 @@ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeac
 ```npm start```
 
 
-##für development:
-```npm install -g browserify```s
+## für development:
+```npm install -g browserify```
 
 für neues bundle -> 
 bundle.js inhalt löschen
