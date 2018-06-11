@@ -8,7 +8,7 @@
 
 ```cd solr-7.3.0```
 
-```bin/solr -e techproducts```
+```bin/solr -e schemaless```
 
 ```http://localhost:8983/solr/#/ ```
 
