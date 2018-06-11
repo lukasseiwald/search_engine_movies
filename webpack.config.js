@@ -16,7 +16,10 @@ var entrypoint = process.env.npm_lifecycle_event === 'dev' ?
 module.exports = {
   entry: entrypoint,
   node: {
-    fs: 'empty'
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    dns: 'empty'
   },
   output: {
     path: __dirname + '/dist',
@@ -36,6 +39,10 @@ module.exports = {
         test: /\.scss$/,
         include: __dirname + '/app',
         loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },
