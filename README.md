@@ -20,6 +20,15 @@ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeac
 
 ```npm install```
 
-```npm run build```
 
 ```npm start```
+
+
+##für development:
+```npm install -g browserify```s
+
+für neues bundle -> 
+bundle.js inhalt löschen
+
+dann: ```browserify src/functions.js > bundle.js```
+
