@@ -83151,6 +83151,13 @@ var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
 
 window.searchForMovies = function(){
+
+  let tmp = document.getElementById("prop");
+
+  if (tmp != null){
+    tmp.remove()
+  }
+
   let searchString = document.getElementById("searchInput").value;
   if (searchString.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
@@ -83158,19 +83165,13 @@ window.searchForMovies = function(){
   else{
     document.getElementById("errors").innerHTML = "";
     let results = getResults(searchString);
+
     let proposals = getProposals(searchString)
-
     proposals.then(function(value){
-      console.log(proposals)
       displayProposals(value)
-
     })
 
-    console.log(proposals)
-
     results = ["hi", "nooo", "what"];
-    //proposals = ["oder das", "oder das"];
-
     displayResults(results, searchString);
   }
 }
@@ -83187,16 +83188,14 @@ window.displayResults = function(results, searchString){
 }
 
 window.displayProposals = function(proposals){
-
-  console.log(proposals);
-
-  let html = "Did you mean: ";
-  for (let entry of proposals){
-    console.log(entry);
-    html +=`<a href='#' onclick='proposedSearch("${entry.word}")'>${entry.word}</a> `;
+  if(proposals != null){
+    let html = "<span id='prop'> Did you mean: ";
+    for (let entry of proposals){
+      html +=`<a href='#' onclick='proposedSearch("${entry.word}")'>${entry.word}</a> `;
+    }
+    html += "</span>"
+    document.getElementById("proposals").innerHTML = html;
   }
-  document.getElementById("proposals").innerHTML = html;
-
 }
 
 window.proposedSearch = function(searchString){
@@ -83216,11 +83215,12 @@ return new Promise(function(resolve, reject){
 	   if(err){
 	   	console.log(err);
 	   }else{
-
-       resolve(obj.spellcheck.suggestions[1].suggestion);
-	   	//console.log(obj.spellcheck.suggestions[1].suggestion);
-      //displayProposals(obj.spellcheck.suggestions[1].suggestion);
-      //return obj.spellcheck.suggestions[1].suggestion;
+       if (obj.spellcheck.suggestions[1] != undefined){
+        resolve(obj.spellcheck.suggestions[1].suggestion);
+      }
+      else{
+        resolve(null);
+      }
 	   }
 	});
 })}
