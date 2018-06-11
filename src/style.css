@@ -13,7 +13,6 @@ h1{
 	margin-top: 3em;
 }
 .search {
-	height: 100%;
 	position: absolute;
 	text-align: center;
 	width: 100%;
@@ -142,6 +141,18 @@ h1{
 	background: linear-gradient(#3B2016, #1A0F0B);
 	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
 	top: 1px;
+}
+
+.filterBox {
+	margin-top:10em;
+	display: block;
+	color:#efe;
+}
+
+.filterBox input {
+	color: #efe;
+	margin-top:2em;
+	z-index: 1;
 }
 
 @keyframes glow {

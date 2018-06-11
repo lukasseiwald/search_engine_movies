@@ -21,6 +21,16 @@ let query2 = 'prim_txt_en: clown';
 
 window.searchForMovies = function(){
   let searchString = document.getElementById("searchInput").value;
+  //get checked genres
+  const checkBoxes = document.getElementsByName("genres");
+  let genres = [];
+  checkBoxes.forEach(box => {
+    if(box.checked == true){
+      genres.push(box.value);
+    }
+  })
+  console.log(genres)
+
   if (searchString.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
   }
@@ -69,4 +79,27 @@ window.getResults = function(searchString){
 
 window.getProposals = function(searchString){
 
+}
+
+window.toggleFilterBox = function() {
+  let box = document.getElementById("filterBox")
+  let boxState = box.style.display
+  if(boxState == "none") {
+    box.style.display = "block";
+  }
+  else {
+    box.style.display = "none";
+  }
+}
+
+window.toggleCheck = function(box) {
+  console.log(box.checked)
+  if(box.checked == true) {
+    box.setAttribute("checked", "checked");
+    box.checked = true;
+  }
+  else {
+    box.removeAttribute("checked");
+    box.checked = false;
+  }
 }
