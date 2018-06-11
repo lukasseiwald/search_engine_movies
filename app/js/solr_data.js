@@ -41,6 +41,7 @@ rl.on('line', function(line) {
           // write relevant properties to output JSON file
           outEntry["prim_txt_en"] = entry.primaryTitle
           outEntry["orig_txt_en"] = entry.originalTitle
+          outEntry["_text_"] = entry.primaryTitle
           outEntry["adult_txt_en"] = entry.isAdult
           outEntry["start_year_txt_en"] = entry.startYear
           outEntry["end_year_txt_en"] = entry.endYear
