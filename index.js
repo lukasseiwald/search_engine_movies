@@ -55,9 +55,11 @@ rl.on('line', function(line) {
           outJson.push(outEntry)
         })
         // console.log(outJson)
+        console.log("start sending data")
         outJson.forEach(entry => {
           accumData(entry)
         })
+        console.log("finished sending data")
     }
 })
 
