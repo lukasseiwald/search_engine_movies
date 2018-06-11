@@ -46,7 +46,7 @@ rl.on('line', function(line) {
           outEntry["start_year_txt_en"] = entry.startYear
           outEntry["end_year_txt_en"] = entry.endYear
           outEntry["genres_txt_sort"] = entry.genres.split(",")
-          outEntry["_txt_"] = entry.primaryTitle
+          outEntry["_text_"] = entry.primaryTitle
           // opening_text is optional
           // if(lineJson.opening_text) outJson["opening_txt_en"] = lineJson.opening_text
           // else outJson["opening_txt_en"] = ""
@@ -73,7 +73,7 @@ function accumData(postData) {
     documents.push(postData)
     if(documents.length == 1){
         // send array of JSON objects to solr server
-        console.log('sending')
+        //console.log('sending')
         sendData(documents)
         documents = []
     }
@@ -93,6 +93,6 @@ function sendData(postData){
     if (response.statusCode !== 200) {
       throw(response.body)
     } else {
-      console.log('sent')
+      //console.log('sent')
     }
 }
