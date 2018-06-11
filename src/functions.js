@@ -1,23 +1,6 @@
 
 var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
-var query = client.createQuery()
-				  .q('clown')
-				  .dismax()
-				  .qf({ prim_txt_en: 0.8, start_year_txt_en: 0.2})
-				  .mm(2)
-				  .start(0)
-				  .rows(100);
-
-client.search(query,function(err,obj){
-   if(err){
-   	console.log(err);
-   }else{
-   	console.log(obj);
-   }
-});
-
-let query2 = 'prim_txt_en: clown';
 
 window.searchForMovies = function(){
   let searchString = document.getElementById("searchInput").value;
@@ -27,14 +10,15 @@ window.searchForMovies = function(){
   else{
     document.getElementById("errors").innerHTML = "";
     let results = getResults(searchString);
-    let proposals = getProposals(searchString);
+    let proposals = getProposals(searchString)
+
+    proposals.then(function(value){
+      console.log(proposals)
+      displayProposals(value)
+    })
 
     results = ["hi", "nooo", "what"];
-    proposals = ["oder das", "oder das"];
-
     displayResults(results, searchString);
-    displayProposals(proposals);
-
   }
 }
 
@@ -50,9 +34,12 @@ window.displayResults = function(results, searchString){
 }
 
 window.displayProposals = function(proposals){
+
+  console.log(proposals);
+
   let html = "Did you mean: ";
   for (let entry of proposals){
-    html +=`<a href='#' onclick='proposedSearch("${entry}")'>${entry}</a> `;
+    html +=`<a href='#' onclick='proposedSearch("${entry.word}")'>${entry.word}</a> `;
   }
   document.getElementById("proposals").innerHTML = html;
 
@@ -68,5 +55,14 @@ window.getResults = function(searchString){
 }
 
 window.getProposals = function(searchString){
-
-}
+return new Promise(function(resolve, reject){
+	var query = client.createQuery()
+				  .q(searchString);
+	client.spell(query,function(err,obj){
+	   if(err){
+	   	console.log(err);
+	   }else{
+       resolve(obj.spellcheck.suggestions[1].suggestion);
+	   }
+	});
+})}
