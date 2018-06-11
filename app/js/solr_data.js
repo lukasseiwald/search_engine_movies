@@ -54,9 +54,11 @@ rl.on('line', function(line) {
           outJson.push(outEntry)
         })
         // console.log(outJson)
+        console.log("start sending data")
         outJson.forEach(entry => {
           accumData(entry)
         })
+        console.log("finished sending data")
     }
 })
 
@@ -72,7 +74,7 @@ function accumData(postData) {
     documents.push(postData)
     if(documents.length == 1){
         // send array of JSON objects to solr server
-        console.log('sending')
+        //console.log('sending')
         sendData(documents)
         documents = []
     }
@@ -92,6 +94,6 @@ function sendData(postData){
     if (response.statusCode !== 200) {
       throw(response.body)
     } else {
-      console.log('sent')
+      //console.log('sent')
     }
 }
