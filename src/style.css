@@ -175,16 +175,29 @@ h1{
 	font-size: 1em;
 	margin: 0;
 }
+.resultTitleOrig{
+	font-size: 0.7em;
+	font-weight: lighter;
+	font-style: italic;
+}
 .resultYear{
 	font-size: 0.7em;
 }
 .genreWrapper{
+	font-size: 0.6em;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: center;
 }
+.genreWrapper p{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.resultGenre:first-child {
+    margin-left: 0;
+}
 .resultGenre{
-	font-size: 0.4em;
+	margin-left: 1em;
 }
 
 #proposals, #errors, #results{
