@@ -16674,7 +16674,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
   "_spec": "elliptic@^6.0.0",
-  "_where": "/Users/nakama/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/Users/tiscal95/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -33851,8 +33851,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
 (function (process,Buffer){
 var aws4 = exports,
     url = require('url'),
@@ -42889,8 +42889,8 @@ CombinedStream.prototype._emitError = function(err) {
   this.emit('error', err);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
 (function (process,setImmediate){
 module.exports = defer;
 
@@ -43030,8 +43030,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
 var Stream = require('stream').Stream;
 var util = require('util');
 
@@ -65785,8 +65785,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
 
 /*!
  *  Copyright 2010 LearnBoost <dev@learnboost.com>
@@ -67529,8 +67529,8 @@ module.exports = {
 
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":352,"util":186}],314:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":352,"util":186}],314:[function(require,module,exports){
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
 var assert = require('assert-plus');
@@ -76522,8 +76522,8 @@ Key._oldVersionDetect = function (obj) {
 	return ([1, 0]);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":334,"./dhe":336,"./ed-compat":337,"./errors":338,"./fingerprint":339,"./formats/auto":340,"./formats/dnssec":341,"./formats/pem":343,"./formats/pkcs1":344,"./formats/pkcs8":345,"./formats/rfc4253":346,"./formats/ssh":348,"./formats/ssh-private":347,"./private-key":354,"./signature":355,"./utils":357,"assert-plus":196,"crypto":63}],354:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":334,"./dhe":336,"./ed-compat":337,"./errors":338,"./fingerprint":339,"./formats/auto":340,"./formats/dnssec":341,"./formats/pem":343,"./formats/pkcs1":344,"./formats/pkcs8":345,"./formats/rfc4253":346,"./formats/ssh":348,"./formats/ssh-private":347,"./private-key":354,"./signature":355,"./utils":357,"assert-plus":196,"crypto":63}],354:[function(require,module,exports){
 // Copyright 2017 Joyent, Inc.
 
 module.exports = PrivateKey;
@@ -79753,7 +79753,7 @@ module.exports={
   "_args": [
     [
       "tough-cookie@2.3.4",
-      "/Users/nakama/FH/4. Semester/semantic_web_technologies/search_engine_movies"
+      "/Users/tiscal95/git_http/search_engine_movies"
     ]
   ],
   "_from": "tough-cookie@2.3.4",
@@ -79778,7 +79778,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz",
   "_spec": "2.3.4",
-  "_where": "/Users/nakama/FH/4. Semester/semantic_web_technologies/search_engine_movies",
+  "_where": "/Users/tiscal95/git_http/search_engine_movies",
   "author": {
     "name": "Jeremy Stashewsky",
     "email": "jstashewsky@salesforce.com"
@@ -83161,6 +83161,16 @@ window.searchForMovies = function(){
   }
 
   let searchString = document.getElementById("searchInput").value;
+  //get checked genres
+  const checkBoxes = document.getElementsByName("genres");
+  let genres = [];
+  checkBoxes.forEach(box => {
+    if(box.checked == true){
+      genres.push(box.value);
+    }
+  })
+  console.log(genres)
+
   if (searchString.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
   }
@@ -83231,22 +83241,45 @@ window.getResults = function(searchString){
   });
 }
 
-window.getProposals = function(searchString){
-return new Promise(function(resolve, reject){
-	var query = client.createQuery()
-				  .q(searchString);
-	client.spell(query,function(err,obj){
-	   if(err){
-	   	console.log(err);
-	   }else{
-       if (obj.spellcheck.suggestions[1] != undefined){
-        resolve(obj.spellcheck.suggestions[1].suggestion);
-      }
-      else{
-        resolve(null);
-      }
-	   }
-	});
-})}
+window.getProposals = function(searchString) {
+  return new Promise(function(resolve, reject){
+    var query = client.createQuery()
+            .q(searchString);
+    client.spell(query,function(err,obj){
+       if(err){
+         console.log(err);
+       }else{
+         if (obj.spellcheck.suggestions[1] != undefined){
+          resolve(obj.spellcheck.suggestions[1].suggestion);
+        }
+        else{
+          resolve(null);
+        }
+       }
+    });
+  })}
+
+window.toggleFilterBox = function() {
+  let box = document.getElementById("filterBox")
+  let boxState = box.style.display
+  if(boxState == "none") {
+    box.style.display = "block";
+  }
+  else {
+    box.style.display = "none";
+  }
+}
+
+window.toggleCheck = function(box) {
+  console.log(box.checked)
+  if(box.checked == true) {
+    box.setAttribute("checked", "checked");
+    box.checked = true;
+  }
+  else {
+    box.removeAttribute("checked");
+    box.checked = false;
+  }
+}
 
 },{"solr-client":245}]},{},[375]);
