@@ -16674,7 +16674,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
   "_spec": "elliptic@^6.0.0",
-  "_where": "/Users/denisebuder/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/Users/nakama/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -33851,8 +33851,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
 (function (process,Buffer){
 var aws4 = exports,
     url = require('url'),
@@ -42889,8 +42889,8 @@ CombinedStream.prototype._emitError = function(err) {
   this.emit('error', err);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
 (function (process,setImmediate){
 module.exports = defer;
 
@@ -43030,8 +43030,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
 var Stream = require('stream').Stream;
 var util = require('util');
 
@@ -65785,8 +65785,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
 
 /*!
  *  Copyright 2010 LearnBoost <dev@learnboost.com>
@@ -67529,8 +67529,8 @@ module.exports = {
 
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":352,"util":186}],314:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":352,"util":186}],314:[function(require,module,exports){
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
 var assert = require('assert-plus');
@@ -76522,8 +76522,8 @@ Key._oldVersionDetect = function (obj) {
 	return ([1, 0]);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":334,"./dhe":336,"./ed-compat":337,"./errors":338,"./fingerprint":339,"./formats/auto":340,"./formats/dnssec":341,"./formats/pem":343,"./formats/pkcs1":344,"./formats/pkcs8":345,"./formats/rfc4253":346,"./formats/ssh":348,"./formats/ssh-private":347,"./private-key":354,"./signature":355,"./utils":357,"assert-plus":196,"crypto":63}],354:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":334,"./dhe":336,"./ed-compat":337,"./errors":338,"./fingerprint":339,"./formats/auto":340,"./formats/dnssec":341,"./formats/pem":343,"./formats/pkcs1":344,"./formats/pkcs8":345,"./formats/rfc4253":346,"./formats/ssh":348,"./formats/ssh-private":347,"./private-key":354,"./signature":355,"./utils":357,"assert-plus":196,"crypto":63}],354:[function(require,module,exports){
 // Copyright 2017 Joyent, Inc.
 
 module.exports = PrivateKey;
@@ -79750,30 +79750,35 @@ Store.prototype.getAllCookies = function(cb) {
 
 },{}],366:[function(require,module,exports){
 module.exports={
-  "_from": "tough-cookie@~2.3.3",
+  "_args": [
+    [
+      "tough-cookie@2.3.4",
+      "/Users/nakama/FH/4. Semester/semantic_web_technologies/search_engine_movies"
+    ]
+  ],
+  "_from": "tough-cookie@2.3.4",
   "_id": "tough-cookie@2.3.4",
   "_inBundle": false,
   "_integrity": "sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==",
   "_location": "/tough-cookie",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "tough-cookie@~2.3.3",
+    "raw": "tough-cookie@2.3.4",
     "name": "tough-cookie",
     "escapedName": "tough-cookie",
-    "rawSpec": "~2.3.3",
+    "rawSpec": "2.3.4",
     "saveSpec": null,
-    "fetchSpec": "~2.3.3"
+    "fetchSpec": "2.3.4"
   },
   "_requiredBy": [
     "/request",
     "/solr-client/request"
   ],
   "_resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz",
-  "_shasum": "ec60cee38ac675063ffc97a5c18970578ee83655",
-  "_spec": "tough-cookie@~2.3.3",
-  "_where": "/Users/denisebuder/Documents/FH/4.Semester/semantic-web-technologies/browserify-test/node_modules/request",
+  "_spec": "2.3.4",
+  "_where": "/Users/nakama/FH/4. Semester/semantic_web_technologies/search_engine_movies",
   "author": {
     "name": "Jeremy Stashewsky",
     "email": "jstashewsky@salesforce.com"
@@ -79781,7 +79786,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/salesforce/tough-cookie/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Alexander Savin"
@@ -79805,7 +79809,6 @@ module.exports={
   "dependencies": {
     "punycode": "^1.4.1"
   },
-  "deprecated": false,
   "description": "RFC6265 Cookies and Cookie Jar for node.js",
   "devDependencies": {
     "async": "^1.4.2",
@@ -83146,26 +83149,8 @@ WError.prototype.cause = function we_cause(c)
 };
 
 },{"assert-plus":196,"core-util-is":206,"extsprintf":213,"util":186}],375:[function(require,module,exports){
-
 var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
-var query = client.createQuery()
-				  .q('clown')
-				  .dismax()
-				  .qf({ prim_txt_en: 0.8, start_year_txt_en: 0.2})
-				  .mm(2)
-				  .start(0)
-				  .rows(100);
-
-client.search(query,function(err,obj){
-   if(err){
-   	console.log(err);
-   }else{
-   	console.log(obj);
-   }
-});
-
-let query2 = 'prim_txt_en: clown';
 
 window.searchForMovies = function(){
   let searchString = document.getElementById("searchInput").value;
@@ -83177,23 +83162,33 @@ window.searchForMovies = function(){
     let results = getResults(searchString);
     let proposals = getProposals(searchString);
 
-    results = ["hi", "nooo", "what"];
+    console.log("results1 : " + results);
+
     proposals = ["oder das", "oder das"];
 
-    displayResults(results, searchString);
+    //displayResults(results, searchString);
     displayProposals(proposals);
-
   }
 }
 
 window.displayResults = function(results, searchString){
-
+  console.log("results2 : " + results);
   let html = "";
-  html += `<p>${results.length} results found </p>`
 
-  for (let entry of results){
-    html += `<div class="result"> Title: ${entry} </div>`;
+  for (var i = 0; i < results.length; i++){
+    html += `
+      <div class="result"> 
+        <h2 class="resultTitle">${results[i].orig_txt_en}</h2>
+        <p class="resultYear">${results[i].start_year_txt_en}</p>
+        <hr>
+        <div class="genreWrapper">`
+          results[i].genres_txt_sort.forEach(function(genre) {
+              html += `<p class="resultGenre">${genre}</p>`
+          });
+    html +=`</div></div>`;
+      console.log(results[i].genres_txt_sort[0]);
   }
+
   document.getElementById("results").innerHTML = html;
 }
 
@@ -83212,7 +83207,23 @@ window.proposedSearch = function(searchString){
 }
 
 window.getResults = function(searchString){
+  var query = client.createQuery()
+          .q(searchString)
+          .dismax()
+          .qf({ prim_txt_en: 0.8, start_year_txt_en: 0.2})
+          .mm(2)
+          .start(0)
+          .rows(100);
 
+  client.search(query,function(err,obj){
+     if(err){
+      console.log(err);
+     }else{
+        console.log(obj.response.docs);
+        displayResults(obj.response.docs, searchString);
+        return obj.response.docs;      
+     }
+  });
 }
 
 window.getProposals = function(searchString){
