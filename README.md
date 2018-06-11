@@ -1,5 +1,7 @@
 # Search engine for movies - Semantic Web Technologies
 
+Team: Denise Buder, Martina Neureiter, Alexander Tischhart, Lukas Seiwald
+
 ## Start Vagrant
 
 ```vagrant up```
