@@ -1,21 +1,25 @@
-# A (very) simple starting point to use ES6 & beyond features in the browser today with Webpack and Babel.
+# Search engine for movies - Semantic Web Technologies
 
-Out of the box includes features up to stage 0, tweak to your needs.
+## Start Vagrant
 
-Also supports SASS, just create your `*.scss` file in `/app` and require it, or simply change the sample file provided.
+```vagrant up```
 
-## Usage
+```vagrant ssh```
 
-If you don't have webpack installed globally do so by running `npm install webpack -g`. Then run `npm install` to install dependencies.
+```cd solr-7.3.0```
 
-- `npm start` will start the live-reload dev server.
-- `npm run build` will build the site for development use. By default site are output in the `dist/` folder
-- `npm run production` will output a minified build for production use.
-- `npm run clean` will remove the `/dist` folder.
+```bin/solr -e schemaless```
 
-## Github Pages
+```http://localhost:8983/solr/#/ ```
 
-After you've built site site, you can publish it to Github Pages by using a `git subtree push`.  
-Make sure you've committed `dist/` and run `git subtree push --prefix dist origin gh-pages`.  
-If you don't want to use Github Pages add `dist/` to `.gitignore`.
+## Install Chrome Plugin: Allow Controll Allow Origin
 
+https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
+
+## Start Webpack
+
+```npm install```
+
+```npm run build```
+
+```npm start```
