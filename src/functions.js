@@ -1,5 +1,6 @@
 var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
+var count = require('word-count')
 
 document.getElementById("searchInput").addEventListener("keyup", function(event){
   console.log("key click")
@@ -96,10 +97,14 @@ window.getResults = function(searchString, genres){
           .q(searchString+genresString)
           .dismax()
           .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
-          .mm(2)
+          .mm(count(searchString)+count(genresString))
           .start(0)
           .rows(100);
-
+  
+          // .q({prim_txt_en : searchString , orig_txt_en : searchString})
+          // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
+          // .start(0)
+          // .rows(100);
   client.search(query,function(err,obj){
      if(err){
       console.log(err);
