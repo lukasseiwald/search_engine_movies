@@ -83182,7 +83182,7 @@ window.searchForMovies = function(){
     })
 
     document.getElementById("errors").innerHTML = "";
-    let results = getResults(searchString);
+    let results = getResults(searchString, genres);
   }
 }
 
@@ -83222,9 +83222,13 @@ window.proposedSearch = function(searchString){
   searchForMovies();
 }
 
-window.getResults = function(searchString){
+window.getResults = function(searchString, genres){
+  genresString = "" 
+  genres.forEach(genre => {
+    genresString += ` ${genre}`
+  })
   var query = client.createQuery()
-          .q(searchString)
+          .q(searchString+genresString)
           .dismax()
           .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
           .mm(2)
