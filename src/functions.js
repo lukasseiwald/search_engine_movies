@@ -18,7 +18,6 @@ window.searchForMovies = function(){
       genres.push(box.value);
     }
   })
-  console.log(genres)
 
   if (searchString.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
@@ -36,22 +35,32 @@ window.searchForMovies = function(){
 }
 
 window.displayResults = function(results, searchString){
+  console.log(results)
+
   let html = "";
 
-  for (var i = 0; i < results.length; i++){
+  if (results.length == 0 ){
     html += `
-      <div class="result"> 
-        <h2 class="resultTitle">${results[i].prim_txt_en}</h2>
-        <h2 class="resultTitleOrig">"${results[i].orig_txt_en}"</h2>
-        <p class="resultYear">${results[i].start_year_txt_en}</p>
-        <hr>
-        <div class="genreWrapper">`
-          results[i].genres_txt_sort.forEach(function(genre) {
-              html += `<p class="resultGenre">${genre}</p>`
-          });
-    html +=`</div></div>`;
+      <div class="result">
+        Couldn't find any results for <b> "${searchString}" </b>
+      </div>`
   }
-
+  else{
+    for (var i = 0; i < results.length; i++){
+      html += `
+        <div class="result">
+          <h2 class="resultTitle">${results[i].prim_txt_en}</h2>
+          <h2 class="resultTitleOrig">"${results[i].orig_txt_en}"</h2>
+          <p class="resultYear">${results[i].start_year_txt_en}</p>
+          <hr>
+          <div class="genreWrapper">`
+            results[i].genres_txt_sort.forEach(function(genre) {
+                html += `<p class="resultGenre">${genre}</p>`
+            });
+      html +=`</div></div>`;
+    }
+  }
+  console.log(html);
   document.getElementById("results").innerHTML = html;
 }
 
@@ -72,7 +81,7 @@ window.proposedSearch = function(searchString){
 }
 
 window.getResults = function(searchString, genres){
-  genresString = "" 
+  genresString = ""
   genres.forEach(genre => {
     genresString += ` ${genre}`
   })
@@ -89,7 +98,7 @@ window.getResults = function(searchString, genres){
       console.log(err);
      }else{
         displayResults(obj.response.docs, searchString);
-        return obj.response.docs;      
+        return obj.response.docs;
      }
   });
 }
@@ -124,7 +133,6 @@ window.toggleFilterBox = function() {
 }
 
 window.toggleCheck = function(box) {
-  console.log(box.checked)
   if(box.checked == true) {
     box.setAttribute("checked", "checked");
     box.checked = true;
