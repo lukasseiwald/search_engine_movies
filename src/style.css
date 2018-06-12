@@ -45,7 +45,7 @@ h1{
 	top: 191px;
 }
 
-.search form {
+.search #searchBox {
 	background: #B47743;
 	background: linear-gradient(#3B2016, #1A0F0B);
 	border: 1px solid #B47743;
@@ -144,15 +144,62 @@ h1{
 }
 
 .filterBox {
-	margin-top:10em;
+	width: 33em;
 	display: block;
 	color:#efe;
 }
 
+.searchButtons{
+	display: flex;
+	flex-direction: row;
+	margin-left: 4em;
+}
+
+#filterButton{
+	background: linear-gradient(#dedede, #ffffff);
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 0 #000;
+    color: #1b0f0a;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 1.2em;
+    margin-left: 2.4em;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 -1px 0 #000;
+    width: 60px;
+}
+
 .filterBox input {
 	color: #efe;
-	margin-top:2em;
+	margin-top: 2em;
 	z-index: 1;
+}
+.genres {
+	display: none;
+	margin-top: 1em;
+}
+.genres span {
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+	padding-right: 0.8em;
+	padding-left: 0.1em;
+	margin: 0.3em 0.1em;
+	border: 2px solid #9D804F;
+}
+input[type=checkbox] {
+	margin: 1em 1em;
+ 	width: 1.5em;
+ 	height: 1.5em;
+}
+input[type=checkbox]:checked {
+	animation: glow 800ms ease-out infinite alternate;
 }
 
 @keyframes glow {
@@ -219,6 +266,7 @@ h1{
 }
 #proposals{
 	color: #fefefe;
+	margin-top: 11.5em;
 }
 
 #proposals a{

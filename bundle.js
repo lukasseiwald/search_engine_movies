@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
@@ -83319,3 +83320,5 @@ window.toggleCheck = function(box) {
 }
 
 },{"solr-client":245,"word-count":375}]},{},[376]);
+=======
+>>>>>>> 350c7d0f85e3144dc0e287b5348e40b0ca2b4b65

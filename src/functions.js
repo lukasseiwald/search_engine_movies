@@ -2,8 +2,16 @@ var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
 var count = require('word-count')
 
-window.searchForMovies = function(){
+document.getElementById("searchInput").addEventListener("keyup", function(event){
+  console.log("key click")
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    searchForMovies();
+  }
+});
 
+
+window.searchForMovies = function(){
   let tmp = document.getElementById("prop");
 
   if (tmp != null){
@@ -19,13 +27,11 @@ window.searchForMovies = function(){
       genres.push(box.value);
     }
   })
-  console.log(genres)
 
-  if (searchString.length === 0){
+  if (searchString.length === 0 && checkBoxes.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
   }
   else{
-
     let proposals = getProposals(searchString)
     proposals.then(function(value){
       displayProposals(value)
@@ -37,22 +43,32 @@ window.searchForMovies = function(){
 }
 
 window.displayResults = function(results, searchString){
+  console.log(results)
+
   let html = "";
 
-  for (var i = 0; i < results.length; i++){
+  if (results.length == 0 ){
     html += `
-      <div class="result"> 
-        <h2 class="resultTitle">${results[i].prim_txt_en}</h2>
-        <h2 class="resultTitleOrig">"${results[i].orig_txt_en}"</h2>
-        <p class="resultYear">${results[i].start_year_txt_en}</p>
-        <hr>
-        <div class="genreWrapper">`
-          results[i].genres_txt_sort.forEach(function(genre) {
-              html += `<p class="resultGenre">${genre}</p>`
-          });
-    html +=`</div></div>`;
+      <div class="result">
+        Couldn't find any results for <b> "${searchString}" </b>
+      </div>`
   }
-
+  else{
+    for (var i = 0; i < results.length; i++){
+      html += `
+        <div class="result">
+          <h2 class="resultTitle">${results[i].prim_txt_en}</h2>
+          <h2 class="resultTitleOrig">"${results[i].orig_txt_en}"</h2>
+          <p class="resultYear">${results[i].start_year_txt_en}</p>
+          <hr>
+          <div class="genreWrapper">`
+            results[i].genres_txt_sort.forEach(function(genre) {
+                html += `<p class="resultGenre">${genre}</p>`
+            });
+      html +=`</div></div>`;
+    }
+  }
+  console.log(html);
   document.getElementById("results").innerHTML = html;
 }
 
@@ -73,7 +89,7 @@ window.proposedSearch = function(searchString){
 }
 
 window.getResults = function(searchString, genres){
-  genresString = "" 
+  genresString = ""
   genres.forEach(genre => {
     genresString += ` ${genre}`
   })
@@ -94,7 +110,7 @@ window.getResults = function(searchString, genres){
       console.log(err);
      }else{
         displayResults(obj.response.docs, searchString);
-        return obj.response.docs;      
+        return obj.response.docs;
      }
   });
 }
@@ -118,7 +134,7 @@ window.getProposals = function(searchString) {
   })}
 
 window.toggleFilterBox = function() {
-  let box = document.getElementById("filterBox")
+  let box = document.getElementById("genre")
   let boxState = box.style.display
   if(boxState == "none") {
     box.style.display = "block";
@@ -129,7 +145,6 @@ window.toggleFilterBox = function() {
 }
 
 window.toggleCheck = function(box) {
-  console.log(box.checked)
   if(box.checked == true) {
     box.setAttribute("checked", "checked");
     box.checked = true;

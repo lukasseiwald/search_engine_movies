@@ -9,47 +9,49 @@
 <body>
 	<h1>The Movie Searcher</h1>
 	<section class="search">
-			<form action="" method="">
-				<input  id="searchInput" type="search" placeholder="What Movie are you looking for?">
-			</form>
+		<div id="searchBox">
+			<input id="searchInput" type="search" placeholder="What Movie are you looking for?">
+		</div>
+		<div className="searchButtons">
 			<button onclick="searchForMovies()">Search</button>
+			<button id="filterButton" onclick="toggleFilterBox()" value="Filter"> Filter </button>
+		</div>
 	</section>
-	<input type="button" onclick="toggleFilterBox()" value="Filter">
+	<section id="proposals">
+	</section>
 	<div class="filterBox" id="filterBox">
-		<div class="genres">
-			<h4>Genres</h4>
-			<input type="checkbox" id="short" name="genres" value="Short" onclick="toggleCheck(this)"> Short <br>
-			<input type="checkbox" id="docu" name="genres" value="Documentary" onclick="toggleCheck(this)"> Documentary<br>
-			<input type="checkbox" id="news" name="genres" value="News" onclick="toggleCheck(this)"> News<br>
-			<input type="checkbox" id="sport" name="genres" value="Sport" onclick="toggleCheck(this)"> Sport<br>
-			<input type="checkbox" id="comedy" name="genres" value="Comedy" onclick="toggleCheck(this)"> Comedy<br>
-			<input type="checkbox" id="drama" name="genres" value="Drama" onclick="toggleCheck(this)"> Drama<br>
-			<input type="checkbox" id="fantasy" name="genres" value="Fantasy" onclick="toggleCheck(this)"> Fantasy<br>
-			<input type="checkbox" id="horror" name="genres" value="Horror" onclick="toggleCheck(this)"> Horror<br>
-			<input type="checkbox" id="music" name="genres" value="Music" onclick="toggleCheck(this)"> Music<br>
-			<input type="checkbox" id="crime" name="genres" value="Crime" onclick="toggleCheck(this)"> Crime<br>
-			<input type="checkbox" id="western" name="genres" value="Western" onclick="toggleCheck(this)"> Western<br>
-			<input type="checkbox" id="war" name="genres" value="War" onclick="toggleCheck(this)"> War<br>
-			<input type="checkbox" id="romance" name="genres" value="Romance" onclick="toggleCheck(this)"> Romance<br>
-			<input type="checkbox" id="animation" name="genres" value="Animation" onclick="toggleCheck(this)"> Animation<br>
-			<input type="checkbox" id="adventure" name="genres" value="Adventure" onclick="toggleCheck(this)"> Adventure<br>
-			<input type="checkbox" id="history" name="genres" value="History" onclick="toggleCheck(this)"> History<br>
-			<input type="checkbox" id="musical" name="genres" value="Musical" onclick="toggleCheck(this)"> Musical<br>
-			<input type="checkbox" id="sci-fi" name="genres" value="Sci-Fi" onclick="toggleCheck(this)"> Sci-Fi<br>
-			<input type="checkbox" id="action" name="genres" value="Action" onclick="toggleCheck(this)"> Action<br>
-			<input type="checkbox" id="mystery" name="genres" value="Mystery" onclick="toggleCheck(this)"> Mystery<br>
-			<input type="checkbox" id="family" name="genres" value="Family" onclick="toggleCheck(this)"> Family<br>
-			<input type="checkbox" id="biography" name="genres" value="Biography" onclick="toggleCheck(this)"> Biography<br>
-			<input type="checkbox" id="reality-tv" name="genres" value="Reality-TV" onclick="toggleCheck(this)"> Reality-TV<br>
-			<input type="checkbox" id="talk-show" name="genres" value="Talk-Show" onclick="toggleCheck(this)"> Talk-Show<br>
-			<input type="checkbox" id="adult" name="genres" value="Adult" onclick="toggleCheck(this)"> Adult<br>
-			<input type="checkbox" id="thriller" name="genres" value="Thriller" onclick="toggleCheck(this)"> Thriller<br>
-			<input type="checkbox" id="game-show" name="genres" value="Game-Show" onclick="toggleCheck(this)"> Game-Show<br>
+		<div class="genres" id="genre">
+			<br>
+			<span><input type="checkbox" id="short" name="genres" value="Short" onclick="toggleCheck(this)"/> Short</span>
+			<span><input type="checkbox" id="docu" name="genres" value="Documentary" onclick="toggleCheck(this)"/> Documentary</span>
+			<span><input type="checkbox" id="news" name="genres" value="News" onclick="toggleCheck(this)"/> News</span>
+			<span><input type="checkbox" id="sport" name="genres" value="Sport" onclick="toggleCheck(this)"/> Sport</span><br>
+			<span><input type="checkbox" id="comedy" name="genres" value="Comedy" onclick="toggleCheck(this)"/> Comedy</span>
+			<span><input type="checkbox" id="drama" name="genres" value="Drama" onclick="toggleCheck(this)"/> Drama</span>
+			<span><input type="checkbox" id="fantasy" name="genres" value="Fantasy" onclick="toggleCheck(this)"/> Fantasy</span>
+			<span><input type="checkbox" id="horror" name="genres" value="Horror" onclick="toggleCheck(this)"/> Horror </span><br>
+			<span><input type="checkbox" id="music" name="genres" value="Music" onclick="toggleCheck(this)"/> Music </span>
+			<span><input type="checkbox" id="crime" name="genres" value="Crime" onclick="toggleCheck(this)"/> Crime </span>
+			<span><input type="checkbox" id="western" name="genres" value="Western" onclick="toggleCheck(this)"/> Western</span>
+			<span><input type="checkbox" id="war" name="genres" value="War" onclick="toggleCheck(this)"/> War</span><br>
+			<span><input type="checkbox" id="romance" name="genres" value="Romance" onclick="toggleCheck(this)"> Romance </span>
+			<span><input type="checkbox" id="animation" name="genres" value="Animation" onclick="toggleCheck(this)"> Animation</span>
+			<span><input type="checkbox" id="adventure" name="genres" value="Adventure" onclick="toggleCheck(this)"> Adventure </span>
+			<span><input type="checkbox" id="history" name="genres" value="History" onclick="toggleCheck(this)"> History </span><br>
+			<span><input type="checkbox" id="musical" name="genres" value="Musical" onclick="toggleCheck(this)"> Musical </span>
+			<span><input type="checkbox" id="sci-fi" name="genres" value="Sci-Fi" onclick="toggleCheck(this)"> Sci-Fi </span>
+			<span><input type="checkbox" id="action" name="genres" value="Action" onclick="toggleCheck(this)"> Action </span>
+			<span><input type="checkbox" id="mystery" name="genres" value="Mystery" onclick="toggleCheck(this)"> Mystery </span><br>
+			<span><input type="checkbox" id="family" name="genres" value="Family" onclick="toggleCheck(this)"> Family </span>
+			<span><input type="checkbox" id="biography" name="genres" value="Biography" onclick="toggleCheck(this)"> Biography </span>
+			<span><input type="checkbox" id="reality-tv" name="genres" value="Reality-TV" onclick="toggleCheck(this)"> Reality-TV </span>
+			<span><input type="checkbox" id="talk-show" name="genres" value="Talk-Show" onclick="toggleCheck(this)"> Talk-Show </span>
+			<span><input type="checkbox" id="adult" name="genres" value="Adult" onclick="toggleCheck(this)"> Adult </span>
+			<span><input type="checkbox" id="thriller" name="genres" value="Thriller" onclick="toggleCheck(this)"> Thriller </span>
+			<span><input type="checkbox" id="game-show" name="genres" value="Game-Show" onclick="toggleCheck(this)"> Game-Show </span>
 		</div>
 	</div>
 	<section id="errors">
-	</section>
-	<section id="proposals">
 	</section>
 	<section id="results">
 </body>
