@@ -144,6 +144,7 @@ h1{
 }
 
 .filterBox {
+	width: 33em;
 	margin-top:10em;
 	display: block;
 	color:#efe;
@@ -153,6 +154,22 @@ h1{
 	color: #efe;
 	margin-top:2em;
 	z-index: 1;
+}
+.genres span {
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+	padding-right: 0.8em;
+	padding-left: 0.1em;
+	margin: 0.3em 0.1em;
+	border: 2px solid #9D804F;
+}
+input[type=checkbox] {
+	margin: 1em 1em;
+ 	width: 1.5em;
+ 	height: 1.5em;
+}
+input[type=checkbox]:checked {
+	animation: glow 800ms ease-out infinite alternate;
 }
 
 @keyframes glow {
