@@ -2,6 +2,8 @@
 
 Team: Denise Buder, Martina Neureiter, Alexander Tischhart, Lukas Seiwald
 
+Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
+
 ## Start Vagrant
 
 ```vagrant up```
