@@ -83149,8 +83149,36 @@ WError.prototype.cause = function we_cause(c)
 };
 
 },{"assert-plus":196,"core-util-is":206,"extsprintf":213,"util":186}],375:[function(require,module,exports){
+/**
+ * Word Count
+ *
+ * Word count in respect of CJK characters.
+ *
+ * Copyright (c) 2015 - 2016 by Hsiaoming Yang.
+ */
+
+var pattern = /[a-zA-Z0-9_\u0392-\u03c9\u00c0-\u00ff\u0600-\u06ff]+|[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g;
+
+module.exports = function (data) {
+  var m = data.match(pattern);
+  var count = 0;
+  if (!m) {
+    return 0;
+  }
+  for (var i = 0; i < m.length; i++) {
+    if (m[i].charCodeAt(0) >= 0x4e00) {
+      count += m[i].length;
+    } else {
+      count += 1;
+    }
+  }
+  return count;
+};
+
+},{}],376:[function(require,module,exports){
 var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
+var count = require('word-count')
 
 window.searchForMovies = function(){
 
@@ -83231,10 +83259,14 @@ window.getResults = function(searchString, genres){
           .q(searchString+genresString)
           .dismax()
           .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
-          .mm(2)
+          .mm(count(searchString)+count(genresString))
           .start(0)
           .rows(100);
-
+  
+          // .q({prim_txt_en : searchString , orig_txt_en : searchString})
+          // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
+          // .start(0)
+          // .rows(100);
   client.search(query,function(err,obj){
      if(err){
       console.log(err);
@@ -83286,4 +83318,4 @@ window.toggleCheck = function(box) {
   }
 }
 
-},{"solr-client":245}]},{},[375]);
+},{"solr-client":245,"word-count":375}]},{},[376]);
