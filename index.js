@@ -7,7 +7,7 @@ const request = require('sync-request')
 
 //parse json
 // tsv({
-//   input: "source/name.basics.tsv",
+//   input: "src/basics.tsv",
 //   output: "movies.json"
 //   //array of arrays, 1st array is column names
 //   ,parseRows: false
@@ -22,7 +22,7 @@ const request = require('sync-request')
 let documents = []
 
 // read file through fs readstream
-const instream = fs.createReadStream('src/movies.json') // video file has to be named 'simplewiki.json'
+const instream = fs.createReadStream('src/movies_small_collection.json') // video file has to be named 'simplewiki.json'
 const outstream = new stream
 const rl = readline.createInterface(instream, outstream)
 
