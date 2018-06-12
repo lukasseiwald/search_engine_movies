@@ -1,8 +1,16 @@
 var solr = require('solr-client')
 var client = solr.createClient('localhost', '8983', 'gettingstarted');
 
-window.searchForMovies = function(){
+document.getElementById("searchInput").addEventListener("keyup", function(event){
+  console.log("key click")
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    searchForMovies();
+  }
+});
 
+
+window.searchForMovies = function(){
   let tmp = document.getElementById("prop");
 
   if (tmp != null){
@@ -19,11 +27,10 @@ window.searchForMovies = function(){
     }
   })
 
-  if (searchString.length === 0){
+  if (searchString.length === 0 && checkBoxes.length === 0){
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
   }
   else{
-
     let proposals = getProposals(searchString)
     proposals.then(function(value){
       displayProposals(value)

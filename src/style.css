@@ -45,7 +45,7 @@ h1{
 	top: 191px;
 }
 
-.search form {
+.search #searchBox {
 	background: #B47743;
 	background: linear-gradient(#3B2016, #1A0F0B);
 	border: 1px solid #B47743;
