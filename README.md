@@ -14,7 +14,7 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```bin/solr -e schemaless```
 
-```in solr einmal spellcheck.build ausführen```
+```in solr einmal spellcheck.build ausführen (zB in Query spellcheck und spellcheck.build aktivieren und ausführen)``` 
 
 ```http://localhost:8983/solr/#/ ```
 
@@ -22,14 +22,17 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 
-## Start Frontend
+## Load movies into SOLR
 
 ```npm install```
 
+```node index.js```
+
+## Start Frontend with Server
+
 ```npm start```
 
-
-## für development:
+## !!! nur für development:
 ```npm install -g browserify```
 
 für neues bundle ->
