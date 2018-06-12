@@ -113,10 +113,10 @@ window.getProposals = function(searchString) {
   })}
 
 window.toggleFilterBox = function() {
-  let box = document.getElementById("filterBox")
+  let box = document.getElementById("genre")
   let boxState = box.style.display
   if(boxState == "none") {
-    box.style.display = "flex";
+    box.style.display = "block";
   }
   else {
     box.style.display = "none";

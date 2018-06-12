@@ -145,15 +145,39 @@ h1{
 
 .filterBox {
 	width: 33em;
-	margin-top:10em;
 	display: block;
 	color:#efe;
 }
 
+#filterButton{
+	background: #B47743;
+	background: linear-gradient(#3B2016, #1A0F0B);
+	box-sizing: border-box;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 2px 0 #000;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: 'Cabin', helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 1em;
+	padding: 0;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	width: 80px;
+}
+
 .filterBox input {
 	color: #efe;
-	margin-top:2em;
+	margin-top: 2em;
 	z-index: 1;
+}
+.genres {
+	display: none;
+	margin-top: 3em;
 }
 .genres span {
 	padding-top: 0.4em;
@@ -236,6 +260,7 @@ input[type=checkbox]:checked {
 }
 #proposals{
 	color: #fefefe;
+	margin-top: 11.5em;
 }
 
 #proposals a{
