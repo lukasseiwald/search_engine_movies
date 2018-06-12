@@ -112,7 +112,7 @@ window.toggleFilterBox = function() {
   let box = document.getElementById("filterBox")
   let boxState = box.style.display
   if(boxState == "none") {
-    box.style.display = "block";
+    box.style.display = "flex";
   }
   else {
     box.style.display = "none";
