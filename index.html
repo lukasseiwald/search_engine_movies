@@ -12,12 +12,14 @@
 			<form action="" method="">
 				<input  id="searchInput" type="search" placeholder="What Movie are you looking for?">
 			</form>
-			<button onclick="searchForMovies()">Search</button>
+			<div className="searchButtons">
+				<button onclick="searchForMovies()">Search</button>
+				<button id="filterButton" onclick="toggleFilterBox()" value="Filter"> Filter </button>
+			</div>
 	</section>
 	<section id="proposals">
 	</section>
 	<div class="filterBox" id="filterBox">
-		<button id="filterButton" onclick="toggleFilterBox()" value="Filter"> Filter </button>
 		<div class="genres" id="genre">
 			<br>
 			<span><input type="checkbox" id="short" name="genres" value="Short" onclick="toggleCheck(this)"/> Short</span>

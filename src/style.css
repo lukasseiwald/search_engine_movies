@@ -149,25 +149,31 @@ h1{
 	color:#efe;
 }
 
+.searchButtons{
+	display: flex;
+	flex-direction: row;
+	margin-left: 4em;
+}
+
 #filterButton{
-	background: #B47743;
-	background: linear-gradient(#3B2016, #1A0F0B);
-	box-sizing: border-box;
-	border-radius: 5px 5px 5px 5px;
-	box-shadow: 0 2px 0 #000;
-	color: #fff;
-	display: block;
-	float: left;
-	font-family: 'Cabin', helvetica, arial, sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	height: 40px;
-	line-height: 40px;
-	margin-top: 1em;
-	padding: 0;
-	position: relative;
-	text-shadow: 0 -1px 0 #000;
-	width: 80px;
+	background: linear-gradient(#dedede, #ffffff);
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 0 #000;
+    color: #1b0f0a;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 1.2em;
+    margin-left: 2.4em;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 -1px 0 #000;
+    width: 60px;
 }
 
 .filterBox input {
@@ -177,7 +183,7 @@ h1{
 }
 .genres {
 	display: none;
-	margin-top: 3em;
+	margin-top: 1em;
 }
 .genres span {
 	padding-top: 0.4em;
