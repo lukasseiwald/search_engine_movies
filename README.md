@@ -32,7 +32,7 @@ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeac
 
 ```npm start```
 
-## !!! nur für development:
+### !!! nur für development:
 ```npm install -g browserify```
 
 für neues bundle ->
