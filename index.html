@@ -9,13 +9,13 @@
 <body>
 	<h1>The Movie Searcher</h1>
 	<section class="search">
-			<form action="" method="">
-				<input  id="searchInput" type="search" placeholder="What Movie are you looking for?">
-			</form>
-			<div className="searchButtons">
-				<button onclick="searchForMovies()">Search</button>
-				<button id="filterButton" onclick="toggleFilterBox()" value="Filter"> Filter </button>
-			</div>
+		<div id="searchBox">
+			<input id="searchInput" type="search" placeholder="What Movie are you looking for?">
+		</div>
+		<div className="searchButtons">
+			<button onclick="searchForMovies()">Search</button>
+			<button id="filterButton" onclick="toggleFilterBox()" value="Filter"> Filter </button>
+		</div>
 	</section>
 	<section id="proposals">
 	</section>

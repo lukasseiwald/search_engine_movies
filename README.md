@@ -14,6 +14,8 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```bin/solr -e schemaless```
 
+```in solr einmal spellcheck.build ausführen```
+
 ```http://localhost:8983/solr/#/ ```
 
 ## Install Chrome Plugin: Allow Controll Allow Origin
@@ -24,15 +26,13 @@ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeac
 
 ```npm install```
 
-
 ```npm start```
 
 
 ## für development:
 ```npm install -g browserify```
 
-für neues bundle -> 
+für neues bundle ->
 bundle.js inhalt löschen
 
 dann: ```browserify src/functions.js > bundle.js```
-
