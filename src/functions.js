@@ -99,8 +99,19 @@ window.getResults = function(searchString, genres){
   console.log(opt.searchTerms)
   if (opt.searchTerms.length != 0) {
     opt.searchTerms.forEach(term => {
-      qb.where('prim_txt_en').equals(term)
-      qb.where('orig_txt_en').equals(term)
+      qb.begin()
+            .where('prim_txt_en').in(term)
+            .or()
+            .begin()
+              .where('orig_txt_en').in(term)
+            .end()
+            .or()
+            .begin()
+              .where('start_year_txt_en').in(term)
+            .end()
+          .end();
+      //qb.where('prim_txt_en').equals(term)
+      //qb.where('orig_txt_en').equals(term)
     })
     if(opt.genresTerms.length != 0) {
       opt.genresTerms.forEach(term => {
@@ -121,8 +132,10 @@ window.getResults = function(searchString, genres){
           .start(0)
           .rows(100);
 
+          console.log(query);
+
   qb = new SolrQueryBuilder();
-  
+
           // .q({prim_txt_en : searchString , orig_txt_en : searchString})
           // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
           // .start(0)
