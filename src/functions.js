@@ -109,6 +109,10 @@ window.getResults = function(searchString, genres){
             .begin()
               .where('start_year_txt_en').in(term)
             .end()
+            .or()
+            .begin()
+              .where('genres_txt_sort').in(term)
+            .end()
           .end();
       //qb.where('prim_txt_en').equals(term)
       //qb.where('orig_txt_en').equals(term)
@@ -128,7 +132,7 @@ window.getResults = function(searchString, genres){
 
   var query = client.createQuery()
           .q(qb.build())
-          .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
+          .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2})
           .start(0)
           .rows(100);
 
