@@ -26080,7 +26080,7 @@ module.exports = function privateDecrypt(private_key, enc, reverse) {
   } else {
     padding = 4;
   }
-
+  
   var key = parseKeys(private_key);
   var k = key.modulus.byteLength();
   if (enc.length > k || new bn(enc).cmp(key.modulus) >= 0) {
@@ -31151,7 +31151,7 @@ var IncomingMessage = exports.IncomingMessage = function (xhr, response, mode, f
 		self.url = response.url
 		self.statusCode = response.status
 		self.statusMessage = response.statusText
-
+		
 		response.headers.forEach(function (header, key){
 			self.headers[key.toLowerCase()] = header
 			self.rawHeaders.push(key, header)
@@ -31281,7 +31281,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 				self.push(new Buffer(response))
 				break
 			}
-			// Falls through in IE8
+			// Falls through in IE8	
 		case 'text':
 			try { // This will fail when readyState = 3 in IE9. Switch mode and wait for readyState = 4
 				response = xhr.responseText
@@ -32633,13 +32633,13 @@ Script.prototype.runInContext = function (context) {
     if (!(context instanceof Context)) {
         throw new TypeError("needs a 'context' argument.");
     }
-
+    
     var iframe = document.createElement('iframe');
     if (!iframe.style) iframe.style = {};
     iframe.style.display = 'none';
-
+    
     document.body.appendChild(iframe);
-
+    
     var win = iframe.contentWindow;
     var wEval = win.eval, wExecScript = win.execScript;
 
@@ -32648,7 +32648,7 @@ Script.prototype.runInContext = function (context) {
         wExecScript.call(win, 'null');
         wEval = win.eval;
     }
-
+    
     forEach(Object_keys(context), function (key) {
         win[key] = context[key];
     });
@@ -32657,11 +32657,11 @@ Script.prototype.runInContext = function (context) {
             win[key] = context[key];
         }
     });
-
+    
     var winKeys = Object_keys(win);
 
     var res = wEval.call(win, this.code);
-
+    
     forEach(Object_keys(win), function (key) {
         // Avoid copying circular objects like `top` and `window` by only
         // updating existing context properties or new properties in the `win`
@@ -32676,9 +32676,9 @@ Script.prototype.runInContext = function (context) {
             defineProp(context, key, win[key]);
         }
     });
-
+    
     document.body.removeChild(iframe);
-
+    
     return res;
 };
 
@@ -32848,7 +32848,7 @@ exports.parse = function (path, map) {
       }
     }
   }
-
+  
   parser.onError = function (err) {
     if(err.message.indexOf("at position") > -1)
       err.message = "Invalid JSON (" + err.message + ")";
@@ -36767,19 +36767,19 @@ module.exports = {
 (function (process,global,setImmediate){
 /* @preserve
  * The MIT License (MIT)
- *
+ * 
  * Copyright (c) 2013-2017 Petka Antonov
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -36787,7 +36787,7 @@ module.exports = {
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- *
+ * 
  */
 /**
  * bluebird build version 3.5.1
@@ -40282,28 +40282,28 @@ _dereq_('./some.js')(Promise, PromiseArray, apiRejection);
 _dereq_('./filter.js')(Promise, INTERNAL);
 _dereq_('./each.js')(Promise, INTERNAL);
 _dereq_('./any.js')(Promise);
-
-    util.toFastProperties(Promise);
-    util.toFastProperties(Promise.prototype);
-    function fillTypes(value) {
-        var p = new Promise(INTERNAL);
-        p._fulfillmentHandler0 = value;
-        p._rejectionHandler0 = value;
-        p._promise0 = value;
-        p._receiver0 = value;
-    }
-    // Complete slack tracking, opt out of field-type tracking and
-    // stabilize map
-    fillTypes({a: 1});
-    fillTypes({b: 2});
-    fillTypes({c: 3});
-    fillTypes(1);
-    fillTypes(function(){});
-    fillTypes(undefined);
-    fillTypes(false);
-    fillTypes(new Promise(INTERNAL));
-    debug.setBounds(Async.firstLineError, util.lastLineError);
-    return Promise;
+                                                         
+    util.toFastProperties(Promise);                                          
+    util.toFastProperties(Promise.prototype);                                
+    function fillTypes(value) {                                              
+        var p = new Promise(INTERNAL);                                       
+        p._fulfillmentHandler0 = value;                                      
+        p._rejectionHandler0 = value;                                        
+        p._promise0 = value;                                                 
+        p._receiver0 = value;                                                
+    }                                                                        
+    // Complete slack tracking, opt out of field-type tracking and           
+    // stabilize map                                                         
+    fillTypes({a: 1});                                                       
+    fillTypes({b: 2});                                                       
+    fillTypes({c: 3});                                                       
+    fillTypes(1);                                                            
+    fillTypes(function(){});                                                 
+    fillTypes(undefined);                                                    
+    fillTypes(false);                                                        
+    fillTypes(new Promise(INTERNAL));                                        
+    debug.setBounds(Async.firstLineError, util.lastLineError);               
+    return Promise;                                                          
 
 };
 
@@ -41091,8 +41091,8 @@ function ReductionPromiseArray(promises, fn, initialValue, _each) {
 util.inherits(ReductionPromiseArray, PromiseArray);
 
 ReductionPromiseArray.prototype._gotAccum = function(accum) {
-    if (this._eachValues !== undefined &&
-        this._eachValues !== null &&
+    if (this._eachValues !== undefined && 
+        this._eachValues !== null && 
         accum !== INTERNAL) {
         this._eachValues.push(accum);
     }
@@ -43258,11 +43258,11 @@ exports.ECKey = function(curve, key, isPublic)
 //      var y = key.slice(bytes+1);
 //      this.P = new ECPointFp(curve,
 //        curve.fromBigInteger(new BigInteger(x.toString("hex"), 16)),
-//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));
+//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));      
       this.P = curve.decodePointHex(key.toString("hex"));
     }else{
       if(key.length != bytes) return false;
-      priv = new BigInteger(key.toString("hex"), 16);
+      priv = new BigInteger(key.toString("hex"), 16);      
     }
   }else{
     var n1 = n.subtract(BigInteger.ONE);
@@ -43284,7 +43284,7 @@ exports.ECKey = function(curve, key, isPublic)
       if(!key || !key.P) return false;
       var S = key.P.multiply(priv);
       return new Buffer(unstupid(S.getX().toBigInteger().toString(16),bytes*2),"hex");
-   }
+   }     
   }
 }
 
@@ -43727,7 +43727,7 @@ ECFieldElementFp.prototype.modReduce = function(x)
             {
                 u = u.multiply(this.getR());
             }
-            x = u.add(v);
+            x = u.add(v); 
         }
         while (x.compareTo(q) >= 0)
         {
@@ -44309,8 +44309,8 @@ var util = require('util')
   , net = require('net')
   , tls = require('tls')
   , AgentSSL = require('https').Agent
-
-function getConnectionName(host, port) {
+  
+function getConnectionName(host, port) {  
   var name = ''
   if (typeof host === 'string') {
     name = host + ':' + port
@@ -44319,7 +44319,7 @@ function getConnectionName(host, port) {
     name = host.host + ':' + host.port + ':' + (host.localAddress ? (host.localAddress + ':') : ':')
   }
   return name
-}
+}    
 
 function ForeverAgent(options) {
   var self = this
@@ -44337,7 +44337,7 @@ function ForeverAgent(options) {
     } else if (self.sockets[name].length < self.minSockets) {
       if (!self.freeSockets[name]) self.freeSockets[name] = []
       self.freeSockets[name].push(socket)
-
+      
       // if an error happens while we don't use the socket anyway, meh, throw the socket away
       var onIdleError = function() {
         socket.destroy()
@@ -44363,7 +44363,7 @@ ForeverAgent.prototype.createConnection = net.createConnection
 ForeverAgent.prototype.addRequestNoreuse = Agent.prototype.addRequest
 ForeverAgent.prototype.addRequest = function(req, host, port) {
   var name = getConnectionName(host, port)
-
+  
   if (typeof host !== 'string') {
     var options = host
     port = options.port
@@ -44392,7 +44392,7 @@ ForeverAgent.prototype.removeSocket = function(s, name, host, port) {
     delete this.sockets[name]
     delete this.requests[name]
   }
-
+  
   if (this.freeSockets[name]) {
     var index = this.freeSockets[name].indexOf(s)
     if (index !== -1) {
@@ -47651,8 +47651,8 @@ var validate = exports._validate = function(/*Any*/instance,/*Object*/schema,/*O
 			if(typeof instance != 'object' || instance instanceof Array){
 				errors.push({property:path,message:"an object is required"});
 			}
-
-			for(var i in objTypeDef){
+			
+			for(var i in objTypeDef){ 
 				if(objTypeDef.hasOwnProperty(i)){
 					var value = instance[i];
 					// skip _not_ specified properties
@@ -47859,26 +47859,26 @@ var at, // The index of the current character
             text:    text
         };
     },
-
+    
     next = function (c) {
         // If a c parameter is provided, verify that it matches the current character.
         if (c && c !== ch) {
             error("Expected '" + c + "' instead of '" + ch + "'");
         }
-
+        
         // Get the next character. When there are no more characters,
         // return the empty string.
-
+        
         ch = text.charAt(at);
         at += 1;
         return ch;
     },
-
+    
     number = function () {
         // Parse a number value.
         var number,
             string = '';
-
+        
         if (ch === '-') {
             string = '-';
             next('-');
@@ -47912,14 +47912,14 @@ var at, // The index of the current character
             return number;
         }
     },
-
+    
     string = function () {
         // Parse a string value.
         var hex,
             i,
             string = '',
             uffff;
-
+        
         // When parsing for string values, we must look for " and \ characters.
         if (ch === '"') {
             while (next()) {
@@ -48076,7 +48076,7 @@ value = function () {
 
 module.exports = function (source, reviver) {
     var result;
-
+    
     text = source;
     at = 0;
     ch = ' ';
@@ -48131,7 +48131,7 @@ function quote(string) {
     // backslash characters, then we can safely slap some quotes around it.
     // Otherwise we must also replace the offending characters with safe escape
     // sequences.
-
+    
     escapable.lastIndex = 0;
     return escapable.test(string) ? '"' + string.replace(escapable, function (a) {
         var c = meta[a];
@@ -48149,47 +48149,47 @@ function str(key, holder) {
         mind = gap,
         partial,
         value = holder[key];
-
+    
     // If the value has a toJSON method, call it to obtain a replacement value.
     if (value && typeof value === 'object' &&
             typeof value.toJSON === 'function') {
         value = value.toJSON(key);
     }
-
+    
     // If we were called with a replacer function, then call the replacer to
     // obtain a replacement value.
     if (typeof rep === 'function') {
         value = rep.call(holder, key, value);
     }
-
+    
     // What happens next depends on the value's type.
     switch (typeof value) {
         case 'string':
             return quote(value);
-
+        
         case 'number':
             // JSON numbers must be finite. Encode non-finite numbers as null.
             return isFinite(value) ? String(value) : 'null';
-
+        
         case 'boolean':
         case 'null':
             // If the value is a boolean or null, convert it to a string. Note:
             // typeof null does not produce 'null'. The case is included here in
             // the remote chance that this gets fixed someday.
             return String(value);
-
+            
         case 'object':
             if (!value) return 'null';
             gap += indent;
             partial = [];
-
+            
             // Array.isArray
             if (Object.prototype.toString.apply(value) === '[object Array]') {
                 length = value.length;
                 for (i = 0; i < length; i += 1) {
                     partial[i] = str(i, value) || 'null';
                 }
-
+                
                 // Join all of the elements together, separated with commas, and
                 // wrap them in brackets.
                 v = partial.length === 0 ? '[]' : gap ?
@@ -48198,7 +48198,7 @@ function str(key, holder) {
                 gap = mind;
                 return v;
             }
-
+            
             // If the replacer is an array, use it to select the members to be
             // stringified.
             if (rep && typeof rep === 'object') {
@@ -48224,7 +48224,7 @@ function str(key, holder) {
                     }
                 }
             }
-
+            
         // Join all of the member texts together, separated with commas,
         // and wrap them in braces.
 
@@ -48240,7 +48240,7 @@ module.exports = function (value, replacer, space) {
     var i;
     gap = '';
     indent = '';
-
+    
     // If the space parameter is a number, make an indent string containing that
     // many spaces.
     if (typeof space === 'number') {
@@ -48260,7 +48260,7 @@ module.exports = function (value, replacer, space) {
     && (typeof replacer !== 'object' || typeof replacer.length !== 'number')) {
         throw new Error('JSON.stringify');
     }
-
+    
     // Make a fake root object containing our value under the key of ''.
     // Return the result of stringifying the value.
     return str('', {'': value});
@@ -56761,7 +56761,7 @@ function compare (a, b) {
 }
 
 function generateBase (httpMethod, base_uri, params) {
-  // adapted from https://dev.twitter.com/docs/auth/oauth and
+  // adapted from https://dev.twitter.com/docs/auth/oauth and 
   // https://dev.twitter.com/docs/auth/creating-signature
 
   // Parameter normalization
@@ -57047,7 +57047,7 @@ Collection.prototype.create = function(options) {
 
 /**
  * Reload a Collection
- *
+ * 
  * @param {String} name - Name of the Collection to be reloaded
  *
  * @return {Collection}
@@ -57065,7 +57065,7 @@ Collection.prototype.reload = function(name) {
 
 /**
  * Split a shard
- *
+ * 
  * @param {Object} options - Options for splitting the shard
  * @param {String} collection - Name of the Collection that includes the shard to be split
  * @param {String} shard - Name of the shard to be split
@@ -57105,7 +57105,7 @@ Collection.prototype.splitShard = function(options) {
 /**
  * Create a shard
  * Can only be used for collections that use the 'implicit' router. Use SPLITSHARD for the `compositId` router.
- *
+ * 
  * @param {Object} options - Options for creating the shard
  * @param {String} collection - Name of the Collection where the shard should be created
  * @param {String} shard - Name of the shard to be created
@@ -57128,7 +57128,7 @@ Collection.prototype.createShard = function(options) {
 
 /**
  * Delete a shard
- *
+ * 
  * @param {Object} options - Options for deleting the shard
  * @param {String} collection - Name of the Collection that includes the shard to be deleted
  * @param {String} shard - Name of the shard to be deleted
@@ -57151,7 +57151,7 @@ Collection.prototype.deleteShard = function(options) {
 
 /**
  * Create/ Modify alias for a collection
- *
+ * 
  * @param {Object} options - Options for creation of the collection alias.
  * @param {String} name - The alias name to be created.
  * @param {String|Array} collections - A comma separated list of collections to be aliased. If an array is provided, it will be joined by commas.
@@ -57178,7 +57178,7 @@ Collection.prototype.createAlias = function(options) {
 
 /**
  * Delete a collection alias
- *
+ * 
  * @param {String} name - Name of the alias to delete
  *
  * @return {Collection}
@@ -57214,7 +57214,7 @@ Collection.prototype.delete = function(name) {
 
 /**
  * Delete a replica
- *
+ * 
  * @param {Object} options - Options for deleting the replica
  * @param {String} collection - Name of the Collection that includes the replica to be deleted
  * @param {String} shard - Name of the shard that includes the replica to be deleted
@@ -57245,7 +57245,7 @@ Collection.prototype.deleteReplica = function(options) {
 
 /**
  * Add replica
- *
+ * 
  * @param {Object} options - Options for adding the replica
  * @param {String} collection - Name of the Collection
  * @param {String} shard - Name of the shard to which the replica will be added
@@ -57280,7 +57280,7 @@ Collection.prototype.addReplica = function(options) {
 
 /**
  * Cluster Properties
- *
+ * 
  * @param {Object} options - Options for cluster properties
  * @param {String} name - Name of the property. Two supported properties are 'urlScheme' and 'autoAddReplicas.' Others will be rejected by Solr.
  * @param {String} val - Value of the property. If the value is empty or null, the property is unset.
@@ -57303,7 +57303,7 @@ Collection.prototype.clusterProp = function(options) {
 
 /**
  * Migrate documents to another collection
- *
+ * 
  * @param {Object} options - Options for document migration
  * @param {String} collection - Name of the source collection from which documents will be split.
  * @param {String} targetCollection - Name of the target collection to which documents will be migrated.
@@ -57338,7 +57338,7 @@ Collection.prototype.migrate = function(options) {
 
 /**
  * Add Role
- *
+ * 
  * @param {Object} options - Options for adding the role
  * @param {String} role - Name of role. Only current supported role is 'overseer'
  * @param {String} node - Name of the node.
@@ -57362,7 +57362,7 @@ Collection.prototype.addRole = function(options) {
 /**
  * Remove Role
  * Undo roles assigned using ADDROLE operation
- *
+ * 
  * @param {Object} options - Options for removing the role
  * @param {String} role - Name of role. Only current supported role is 'overseer'
  * @param {String} node - Name of the node.
@@ -57443,7 +57443,7 @@ Collection.prototype.list = function() {
 
 /**
  * Add Replica property
- *
+ * 
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection this replica belongs to.
  * @param {String} shard - Name of the shard the replica belongs to.
@@ -57482,7 +57482,7 @@ Collection.prototype.addReplicaProp = function(options) {
 
 /**
  * Delete Replica property
- *
+ * 
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection this replica belongs to.
  * @param {String} shard - Name of the shard the replica belongs to.
@@ -57513,7 +57513,7 @@ Collection.prototype.deleteReplicaProp = function(options) {
 
 /**
  * Balance a property
- *
+ * 
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection to balance the property in.
  * @param {String} property - The property to balance
@@ -57545,7 +57545,7 @@ Collection.prototype.balanceShardUnique = function(options) {
 
 /**
  * Rebalance leaders
- *
+ * 
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection to rebalance preferredLeaders on.
  * @param {Number} [maxAtOnce] - The maximum number of reassignments to have queue up at once.
@@ -65226,7 +65226,7 @@ module.exports={
                 "$data": {
                     "type": "string",
                     "anyOf": [
-                        { "format": "relative-json-pointer" },
+                        { "format": "relative-json-pointer" }, 
                         { "format": "json-pointer" }
                     ]
                 }
@@ -65816,7 +65816,7 @@ var crypto = require('crypto')
  * Valid keys.
  */
 
-var keys =
+var keys = 
   [ 'acl'
   , 'location'
   , 'logging'
@@ -65855,7 +65855,7 @@ module.exports.authorization = authorization
  * @param {Object} options
  * @return {String}
  * @api private
- */
+ */ 
 
 function hmacSha1 (options) {
   return crypto.createHmac('sha1', options.secret).update(options.message).digest('base64')
@@ -65864,8 +65864,8 @@ function hmacSha1 (options) {
 module.exports.hmacSha1 = hmacSha1
 
 /**
- * Create a base64 sha1 HMAC for `options`.
- *
+ * Create a base64 sha1 HMAC for `options`. 
+ * 
  * @param {Object} options
  * @return {String}
  * @api private
@@ -65878,10 +65878,10 @@ function sign (options) {
 module.exports.sign = sign
 
 /**
- * Create a base64 sha1 HMAC for `options`.
+ * Create a base64 sha1 HMAC for `options`. 
  *
  * Specifically to be used with S3 presigned URLs
- *
+ * 
  * @param {Object} options
  * @return {String}
  * @api private
@@ -65897,7 +65897,7 @@ module.exports.signQuery= signQuery
  * Return a string for sign() with the given `options`.
  *
  * Spec:
- *
+ * 
  *    <verb>\n
  *    <md5>\n
  *    <content-type>\n
@@ -65913,7 +65913,7 @@ module.exports.signQuery= signQuery
 function stringToSign (options) {
   var headers = options.amazonHeaders || ''
   if (headers) headers += '\n'
-  var r =
+  var r = 
     [ options.verb
     , options.md5
     , options.contentType
@@ -65929,7 +65929,7 @@ module.exports.queryStringToSign = stringToSign
  * for S3 presigned URLs
  *
  * Spec:
- *
+ * 
  *    <date>\n
  *    <resource>
  *
@@ -83317,39 +83317,13 @@ WError.prototype.cause = function we_cause(c)
 };
 
 },{"assert-plus":196,"core-util-is":206,"extsprintf":213,"util":186}],377:[function(require,module,exports){
-/**
- * Word Count
- *
- * Word count in respect of CJK characters.
- *
- * Copyright (c) 2015 - 2016 by Hsiaoming Yang.
- */
-
-var pattern = /[a-zA-Z0-9_\u0392-\u03c9\u00c0-\u00ff\u0600-\u06ff]+|[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g;
-
-module.exports = function (data) {
-  var m = data.match(pattern);
-  var count = 0;
-  if (!m) {
-    return 0;
-  }
-  for (var i = 0; i < m.length; i++) {
-    if (m[i].charCodeAt(0) >= 0x4e00) {
-      count += m[i].length;
-    } else {
-      count += 1;
-    }
-  }
-  return count;
-};
-
-},{}],378:[function(require,module,exports){
-var solr = require('solr-client')
-var client = solr.createClient('localhost', '8983', 'gettingstarted');
-var count = require('word-count')
-var SolrQueryBuilder = require('solr-query-builder')
+var solr = require('solr-client') //for sending query to solr
+var client = solr.createClient('localhost', '8983', 'gettingstarted'); //configure dolr client
+var SolrQueryBuilder = require('solr-query-builder') //helping to build query string
 var qb = new SolrQueryBuilder();
 
+
+//if user presses enter in input field -> start search and prevent site reload:
 document.getElementById("searchInput").addEventListener("keyup", function(event){
   console.log("key click")
   event.preventDefault();
@@ -83359,49 +83333,45 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
 });
 
 
+//function is triggered when the user presses the search button or presses enter in search field:
 window.searchForMovies = function(){
-  let tmp = document.getElementById("prop");
 
-  if (tmp != null){
-    tmp.remove()
-  }
+  let searchString = document.getElementById("searchInput").value; //the user input
 
-  let searchString = document.getElementById("searchInput").value;
-  //get checked genres
+  //get checked genres:
   const checkBoxes = document.getElementsByName("genres");
   let genres = [];
-  checkBoxes.forEach(box => {
+  checkBoxes.forEach(box => { //get all checked genres
     if(box.checked == true){
       genres.push(box.value);
     }
   })
 
-  if (searchString.length === 0 && checkBoxes.length === 0){
+  if (searchString.length === 0 && checkBoxes.length === 0){ //when the user searches for nothing
     document.getElementById("errors").innerHTML = "<p class='error'> Please enter a search term!</p>";
   }
-  else{
-    let proposals = getProposals(searchString)
+
+  else{ //user searches for something
+    let proposals = getProposals(searchString) //get all the suggestions for the user input string
     proposals.then(function(value){
-      displayProposals(value)
+      displayProposals(value) //display those suggestions in html
     })
 
-    document.getElementById("errors").innerHTML = "";
-    let results = getResults(searchString, genres);
+    document.getElementById("errors").innerHTML = ""; //get rid of any previous errors
+    let results = getResults(searchString, genres); //gets results and triggers displayResults
   }
 }
 
-window.displayResults = function(results, searchString){
-  console.log(results)
-
+window.displayResults = function(results, searchString){ //display result in html
   let html = "";
 
-  if (results.length == 0 ){
+  if (results.length == 0 ){ //nothing found
     html += `
       <div class="result">
         Couldn't find any results for <b> "${searchString}" </b>
       </div>`
   }
-  else{
+  else{ //something found -> display result
     for (var i = 0; i < results.length; i++){
       html += `
         <div class="result">
@@ -83416,11 +83386,10 @@ window.displayResults = function(results, searchString){
       html +=`</div></div>`;
     }
   }
-  console.log(html);
   document.getElementById("results").innerHTML = html;
 }
 
-window.displayProposals = function(proposals){
+window.displayProposals = function(proposals){ //if suggestions where found -> display all of them
   if(proposals != null){
     let html = "<span id='prop'> Did you mean: ";
     for (let entry of proposals){
@@ -83431,85 +83400,74 @@ window.displayProposals = function(proposals){
   }
 }
 
-window.proposedSearch = function(searchString){
+window.proposedSearch = function(searchString){ //if user clicks on one of the suggestions on the website -> trigger search for this word
   document.getElementById("searchInput").value = searchString;
   searchForMovies();
 }
 
-window.getResults = function(searchString, genres){
-  var opt = {
-    searchTerms: searchString.split(" ").filter(v=>v!=""),
+window.getResults = function(searchString, genres){ //get results from solr
+  var opt = { //options for solr query builder
+    searchTerms: searchString.split(" ").filter(v=>v!=""), //each term
     genresTerms: genres
   };
 
-  console.log(opt.searchTerms)
-  if (opt.searchTerms.length != 0) {
-    opt.searchTerms.forEach(term => {
+  if (opt.searchTerms.length != 0) { //search terms not empty
+    opt.searchTerms.forEach(term => { //each term has to be in one of the following fields:
       qb.begin()
-            .where('prim_txt_en').in(term)
+            .where('prim_txt_en').in(term) //check if in this field
             .or()
             .begin()
-              .where('orig_txt_en').in(term)
+              .where('orig_txt_en').in(term) //check if in this field
             .end()
             .or()
             .begin()
-              .where('start_year_txt_en').in(term)
+              .where('start_year_txt_en').in(term) //check if in this field
             .end()
             .or()
             .begin()
-              .where('genres_txt_sort').in(term)
+              .where('genres_txt_sort').in(term) //check if in this field
             .end()
           .end();
-      //qb.where('prim_txt_en').equals(term)
-      //qb.where('orig_txt_en').equals(term)
     })
-    if(opt.genresTerms.length != 0) {
+
+    if(opt.genresTerms.length != 0) { //if the user has selected filter options
       opt.genresTerms.forEach(term => {
-        qb.where('genres_txt_sort').equals(term)
+        qb.where('genres_txt_sort').equals(term) //the result must contain an entry in this field
       })
     }
   }
-  else {
+  else { //user searched for nothing
     qb.where('prim_txt_en').equals("")
   }
 
-
-  console.log(qb.build())
-
-  var query = client.createQuery()
-          .q(qb.build())
-          .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2})
+  var query = client.createQuery() //create complete query for solr
+          .q(qb.build()) //query builded before
+          .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2}) //different field-weights
           .start(0)
-          .rows(100);
+          .rows(100); //display 100 rows
 
-          console.log(query);
+  qb = new SolrQueryBuilder(); //reset query
 
-  qb = new SolrQueryBuilder();
-
-          // .q({prim_txt_en : searchString , orig_txt_en : searchString})
-          // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
-          // .start(0)
-          // .rows(100);
-  client.search(query,function(err,obj){
+  client.search(query,function(err,obj){ //search in solr for the query
      if(err){
       console.log(err);
-     }else{
-       console.log(obj.response.docs)
-        displayResults(obj.response.docs, searchString);
-        return obj.response.docs;
+     }
+     else{ //if solr is able to get connection and results:
+        displayResults(obj.response.docs, searchString); //display results
      }
   });
 }
 
-window.getProposals = function(searchString) {
+window.getProposals = function(searchString) { //get suggestions for the user entered term
   return new Promise(function(resolve, reject){
     var query = client.createQuery()
-            .q(searchString);
-    client.spell(query,function(err,obj){
+            .q(searchString) //lookup suggestions for the user input
+    client.spell(query,function(err,obj){ //.spell enables the spellcheck and /spell
        if(err){
          console.log(err);
-       }else{
-         if (obj.spellcheck.suggestions[1] != undefined){
+       }
+       else{ //if solr is able to get connection and results for the suggestions:
+         if (obj.spellcheck.suggestions[1] != undefined){ //if results are found -> display them
           resolve(obj.spellcheck.suggestions[1].suggestion);
         }
         else{
@@ -83519,7 +83477,7 @@ window.getProposals = function(searchString) {
     });
   })}
 
-window.toggleFilterBox = function() {
+window.toggleFilterBox = function() { //diplay filter box on user click on filter
   let box = document.getElementById("genre")
   let boxState = box.style.display
   if(boxState == "none") {
@@ -83530,7 +83488,7 @@ window.toggleFilterBox = function() {
   }
 }
 
-window.toggleCheck = function(box) {
+window.toggleCheck = function(box) { //toggle checkboxes (switch checked on and off)
   if(box.checked == true) {
     box.setAttribute("checked", "checked");
     box.checked = true;
@@ -83541,4 +83499,4 @@ window.toggleCheck = function(box) {
   }
 }
 
-},{"solr-client":245,"solr-query-builder":334,"word-count":377}]},{},[378]);
+},{"solr-client":245,"solr-query-builder":334}]},{},[377]);
