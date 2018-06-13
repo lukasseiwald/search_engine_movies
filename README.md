@@ -18,9 +18,9 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```http://localhost:8983/solr/#/ ```
 
-## Install Chrome Plugin: Allow Controll Allow Origin
+## CORS in SOLR aktivieren
 
-https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
+```solr-7.3.0/server/solr-webapp/webapp/WEB-INF/web.xml mit im Repo enthaltenem web.xml ersetzten```
 
 ## Load movies into SOLR
 

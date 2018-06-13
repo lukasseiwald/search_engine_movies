@@ -139,15 +139,7 @@ window.getResults = function(searchString, genres){
           console.log(query);
 
   qb = new SolrQueryBuilder();
-<<<<<<< HEAD
-  
-=======
 
-          // .q({prim_txt_en : searchString , orig_txt_en : searchString})
-          // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
-          // .start(0)
-          // .rows(100);
->>>>>>> 3e8d4cd306b47aaa4ca8a4a58ccbf57ba090ea0a
   client.search(query,function(err,obj){
      if(err){
       console.log(err);
