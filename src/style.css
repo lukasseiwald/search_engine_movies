@@ -12,6 +12,12 @@ h1{
 	color: #E6CB9D;
 	margin-top: 3em;
 }
+#logo{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 8em;
+	height: 8em;
+}
 .search {
 	position: absolute;
 	text-align: center;
@@ -265,7 +271,7 @@ input[type=checkbox]:checked {
 }
 #proposals{
 	color: #fefefe;
-	margin-top: 11.5em;
+	margin-top: 9em;
 }
 
 #proposals a{
