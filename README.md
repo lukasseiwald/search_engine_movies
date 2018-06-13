@@ -4,7 +4,7 @@ Team: Denise Buder, Martina Neureiter, Alexander Tischhart, Lukas Seiwald
 
 Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
-## Start Vagrant
+## Start Vagrant + SOLR
 
 ```vagrant up```
 
@@ -14,22 +14,27 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```bin/solr -e schemaless```
 
-```in solr einmal spellcheck.build ausführen```
-
 ```http://localhost:8983/solr/#/ ```
 
-## Install Chrome Plugin: Allow Controll Allow Origin
+```falls spellcheck nicht funktionieren sollte (sollte jedoch eigentlich standartmässig funktionieren) - in solr einmal spellcheck.build ausführen (zB in Query spellcheck und spellcheck.build aktivieren und ausführen)```
 
-https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 
-## Start Frontend
+## CORS in SOLR aktivieren
+
+```solr-7.3.0/server/solr-webapp/webapp/WEB-INF/web.xml mit im Repo enthaltenem web.xml ersetzen```
+
+## Load movies-data into SOLR
 
 ```npm install```
 
+```node index.js (einfach abbrechen sobald genug filme in SOLR importiert wurden - sonst dauert es ewig)```
+
+## Start Frontend with Server
+
 ```npm start```
 
-
-## für development:
+## nur für development
+bundle:
 ```npm install -g browserify```
 
 für neues bundle ->

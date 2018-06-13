@@ -45,7 +45,7 @@ rl.on('line', function(line) {
           outEntry["adult_txt_en"] = entry.isAdult
           outEntry["start_year_txt_en"] = entry.startYear
           outEntry["end_year_txt_en"] = entry.endYear
-          outEntry["genres_txt_sort"] = entry.genres.split(",")
+          outEntry["genres_txt_sort"] = entry.genres.split(",") //to get an Array with the genres
           outEntry["_text_"] = entry.primaryTitle
           // opening_text is optional
           // if(lineJson.opening_text) outJson["opening_txt_en"] = lineJson.opening_text
@@ -73,7 +73,7 @@ rl.on('close', function() {
 // accumulates JSON objects in array until 10k before they are sent
 function accumData(postData) {
     documents.push(postData)
-    if(documents.length == 1){
+    if(documents.length == 1){ //length = 1 because everything in postData
         // send array of JSON objects to solr server
         //console.log('sending')
         sendData(documents)
