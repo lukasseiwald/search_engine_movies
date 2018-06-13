@@ -24,7 +24,6 @@ window.searchForMovies = function(){
   searchStringArrayOld = searchStringArrayOld.split(' '); //splitting strin into array 
   let searchStringArrayNew = sw.removeStopwords(searchStringArrayOld); //removing stopwords like (the, of, a)...
   let searchString = searchStringArrayNew.join(' '); //join array back to a string
-  console.log(searchString);
 
   //get checked genres:
   const checkBoxes = document.getElementsByName("genres");

@@ -23,6 +23,10 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```solr-7.3.0/server/solr-webapp/webapp/WEB-INF/web.xml mit im Repo enthaltenem web.xml ersetzen```
 
+```SOLR neustarten: wiederhole Schritt "Start Vagrant + SOLR"```
+
+```Falls im späteren Verlauf trotzdem Probleme mit CORS auftreten sollten, installiere das Allow-Control-Allow-Origin Plugin (Chrome)```
+
 ## Load movies-data into SOLR
 
 ```npm install```

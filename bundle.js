@@ -84991,7 +84991,6 @@ var qb = new SolrQueryBuilder();
 
 //if user presses enter in input field -> start search and prevent site reload:
 document.getElementById("searchInput").addEventListener("keyup", function(event){
-  console.log("key click")
   event.preventDefault();
   if (event.keyCode === 13) {
     searchForMovies();
@@ -85006,9 +85005,9 @@ window.searchForMovies = function(){
     tmp.remove()
   }
   let searchStringArrayOld = document.getElementById("searchInput").value //the user input
-  searchStringArrayOld = searchStringArrayOld.split(' ');
-  let searchStringArrayNew = sw.removeStopwords(searchStringArrayOld);
-  let searchString = searchStringArrayNew.join(' ');
+  searchStringArrayOld = searchStringArrayOld.split(' '); //splitting strin into array 
+  let searchStringArrayNew = sw.removeStopwords(searchStringArrayOld); //removing stopwords like (the, of, a)...
+  let searchString = searchStringArrayNew.join(' '); //join array back to a string
   console.log(searchString);
 
   //get checked genres:
