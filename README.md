@@ -20,7 +20,7 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ## CORS in SOLR aktivieren
 
-```solr-7.3.0/server/solr-webapp/webapp/WEB-INF/web.xml mit im Repo enthaltenem web.xml ersetzten```
+``gsolr-7.3.0/server/solr-webapp/webapp/WEB-INF/web.xml mit im Repo enthaltenem web.xml ersetzten```
 
 ## Load movies into SOLR
 
