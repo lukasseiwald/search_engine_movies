@@ -83335,7 +83335,10 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
 
 //function is triggered when the user presses the search button or presses enter in search field:
 window.searchForMovies = function(){
-
+  let tmp = document.getElementById("prop"); //displayed suggestions
+  if (tmp != null){ //if there are suggestions -> remove them
+    tmp.remove()
+  }
   let searchString = document.getElementById("searchInput").value; //the user input
 
   //get checked genres:
