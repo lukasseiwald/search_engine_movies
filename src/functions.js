@@ -1,12 +1,12 @@
 var solr = require('solr-client') //for sending query to solr
 var client = solr.createClient('localhost', '8983', 'gettingstarted'); //configure dolr client
 var SolrQueryBuilder = require('solr-query-builder') //helping to build query string
+var sw = require('stopword') //removing stopwords
 var qb = new SolrQueryBuilder();
 
 
 //if user presses enter in input field -> start search and prevent site reload:
 document.getElementById("searchInput").addEventListener("keyup", function(event){
-  console.log("key click")
   event.preventDefault();
   if (event.keyCode === 13) {
     searchForMovies();
@@ -20,7 +20,11 @@ window.searchForMovies = function(){
   if (tmp != null){ //if there are suggestions -> remove them
     tmp.remove()
   }
-  let searchString = document.getElementById("searchInput").value; //the user input
+  let searchStringArrayOld = document.getElementById("searchInput").value //the user input
+  searchStringArrayOld = searchStringArrayOld.split(' '); //splitting strin into array 
+  let searchStringArrayNew = sw.removeStopwords(searchStringArrayOld); //removing stopwords like (the, of, a)...
+  let searchString = searchStringArrayNew.join(' '); //join array back to a string
+  console.log(searchString);
 
   //get checked genres:
   const checkBoxes = document.getElementsByName("genres");
