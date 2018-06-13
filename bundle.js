@@ -16674,7 +16674,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
   "_spec": "elliptic@^6.0.0",
-  "_where": "/Users/tiscal95/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/Users/denisebuder/.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -26080,7 +26080,7 @@ module.exports = function privateDecrypt(private_key, enc, reverse) {
   } else {
     padding = 4;
   }
-  
+
   var key = parseKeys(private_key);
   var k = key.modulus.byteLength();
   if (enc.length > k || new bn(enc).cmp(key.modulus) >= 0) {
@@ -31151,7 +31151,7 @@ var IncomingMessage = exports.IncomingMessage = function (xhr, response, mode, f
 		self.url = response.url
 		self.statusCode = response.status
 		self.statusMessage = response.statusText
-		
+
 		response.headers.forEach(function (header, key){
 			self.headers[key.toLowerCase()] = header
 			self.rawHeaders.push(key, header)
@@ -31281,7 +31281,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 				self.push(new Buffer(response))
 				break
 			}
-			// Falls through in IE8	
+			// Falls through in IE8
 		case 'text':
 			try { // This will fail when readyState = 3 in IE9. Switch mode and wait for readyState = 4
 				response = xhr.responseText
@@ -32633,13 +32633,13 @@ Script.prototype.runInContext = function (context) {
     if (!(context instanceof Context)) {
         throw new TypeError("needs a 'context' argument.");
     }
-    
+
     var iframe = document.createElement('iframe');
     if (!iframe.style) iframe.style = {};
     iframe.style.display = 'none';
-    
+
     document.body.appendChild(iframe);
-    
+
     var win = iframe.contentWindow;
     var wEval = win.eval, wExecScript = win.execScript;
 
@@ -32648,7 +32648,7 @@ Script.prototype.runInContext = function (context) {
         wExecScript.call(win, 'null');
         wEval = win.eval;
     }
-    
+
     forEach(Object_keys(context), function (key) {
         win[key] = context[key];
     });
@@ -32657,11 +32657,11 @@ Script.prototype.runInContext = function (context) {
             win[key] = context[key];
         }
     });
-    
+
     var winKeys = Object_keys(win);
 
     var res = wEval.call(win, this.code);
-    
+
     forEach(Object_keys(win), function (key) {
         // Avoid copying circular objects like `top` and `window` by only
         // updating existing context properties or new properties in the `win`
@@ -32676,9 +32676,9 @@ Script.prototype.runInContext = function (context) {
             defineProp(context, key, win[key]);
         }
     });
-    
+
     document.body.removeChild(iframe);
-    
+
     return res;
 };
 
@@ -32848,7 +32848,7 @@ exports.parse = function (path, map) {
       }
     }
   }
-  
+
   parser.onError = function (err) {
     if(err.message.indexOf("at position") > -1)
       err.message = "Invalid JSON (" + err.message + ")";
@@ -33851,8 +33851,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],197:[function(require,module,exports){
 (function (process,Buffer){
 var aws4 = exports,
     url = require('url'),
@@ -36767,19 +36767,19 @@ module.exports = {
 (function (process,global,setImmediate){
 /* @preserve
  * The MIT License (MIT)
- * 
+ *
  * Copyright (c) 2013-2017 Petka Antonov
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -36787,7 +36787,7 @@ module.exports = {
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- * 
+ *
  */
 /**
  * bluebird build version 3.5.1
@@ -40282,28 +40282,28 @@ _dereq_('./some.js')(Promise, PromiseArray, apiRejection);
 _dereq_('./filter.js')(Promise, INTERNAL);
 _dereq_('./each.js')(Promise, INTERNAL);
 _dereq_('./any.js')(Promise);
-                                                         
-    util.toFastProperties(Promise);                                          
-    util.toFastProperties(Promise.prototype);                                
-    function fillTypes(value) {                                              
-        var p = new Promise(INTERNAL);                                       
-        p._fulfillmentHandler0 = value;                                      
-        p._rejectionHandler0 = value;                                        
-        p._promise0 = value;                                                 
-        p._receiver0 = value;                                                
-    }                                                                        
-    // Complete slack tracking, opt out of field-type tracking and           
-    // stabilize map                                                         
-    fillTypes({a: 1});                                                       
-    fillTypes({b: 2});                                                       
-    fillTypes({c: 3});                                                       
-    fillTypes(1);                                                            
-    fillTypes(function(){});                                                 
-    fillTypes(undefined);                                                    
-    fillTypes(false);                                                        
-    fillTypes(new Promise(INTERNAL));                                        
-    debug.setBounds(Async.firstLineError, util.lastLineError);               
-    return Promise;                                                          
+
+    util.toFastProperties(Promise);
+    util.toFastProperties(Promise.prototype);
+    function fillTypes(value) {
+        var p = new Promise(INTERNAL);
+        p._fulfillmentHandler0 = value;
+        p._rejectionHandler0 = value;
+        p._promise0 = value;
+        p._receiver0 = value;
+    }
+    // Complete slack tracking, opt out of field-type tracking and
+    // stabilize map
+    fillTypes({a: 1});
+    fillTypes({b: 2});
+    fillTypes({c: 3});
+    fillTypes(1);
+    fillTypes(function(){});
+    fillTypes(undefined);
+    fillTypes(false);
+    fillTypes(new Promise(INTERNAL));
+    debug.setBounds(Async.firstLineError, util.lastLineError);
+    return Promise;
 
 };
 
@@ -41091,8 +41091,8 @@ function ReductionPromiseArray(promises, fn, initialValue, _each) {
 util.inherits(ReductionPromiseArray, PromiseArray);
 
 ReductionPromiseArray.prototype._gotAccum = function(accum) {
-    if (this._eachValues !== undefined && 
-        this._eachValues !== null && 
+    if (this._eachValues !== undefined &&
+        this._eachValues !== null &&
         accum !== INTERNAL) {
         this._eachValues.push(accum);
     }
@@ -42889,8 +42889,8 @@ CombinedStream.prototype._emitError = function(err) {
   this.emit('error', err);
 };
 
-}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./defer.js":205,"delayed-stream":207,"stream":174,"util":186}],205:[function(require,module,exports){
 (function (process,setImmediate){
 module.exports = defer;
 
@@ -43030,8 +43030,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],207:[function(require,module,exports){
 var Stream = require('stream').Stream;
 var util = require('util');
 
@@ -43258,11 +43258,11 @@ exports.ECKey = function(curve, key, isPublic)
 //      var y = key.slice(bytes+1);
 //      this.P = new ECPointFp(curve,
 //        curve.fromBigInteger(new BigInteger(x.toString("hex"), 16)),
-//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));      
+//        curve.fromBigInteger(new BigInteger(y.toString("hex"), 16)));
       this.P = curve.decodePointHex(key.toString("hex"));
     }else{
       if(key.length != bytes) return false;
-      priv = new BigInteger(key.toString("hex"), 16);      
+      priv = new BigInteger(key.toString("hex"), 16);
     }
   }else{
     var n1 = n.subtract(BigInteger.ONE);
@@ -43284,7 +43284,7 @@ exports.ECKey = function(curve, key, isPublic)
       if(!key || !key.P) return false;
       var S = key.P.multiply(priv);
       return new Buffer(unstupid(S.getX().toBigInteger().toString(16),bytes*2),"hex");
-   }     
+   }
   }
 }
 
@@ -43727,7 +43727,7 @@ ECFieldElementFp.prototype.modReduce = function(x)
             {
                 u = u.multiply(this.getR());
             }
-            x = u.add(v); 
+            x = u.add(v);
         }
         while (x.compareTo(q) >= 0)
         {
@@ -44309,8 +44309,8 @@ var util = require('util')
   , net = require('net')
   , tls = require('tls')
   , AgentSSL = require('https').Agent
-  
-function getConnectionName(host, port) {  
+
+function getConnectionName(host, port) {
   var name = ''
   if (typeof host === 'string') {
     name = host + ':' + port
@@ -44319,7 +44319,7 @@ function getConnectionName(host, port) {
     name = host.host + ':' + host.port + ':' + (host.localAddress ? (host.localAddress + ':') : ':')
   }
   return name
-}    
+}
 
 function ForeverAgent(options) {
   var self = this
@@ -44337,7 +44337,7 @@ function ForeverAgent(options) {
     } else if (self.sockets[name].length < self.minSockets) {
       if (!self.freeSockets[name]) self.freeSockets[name] = []
       self.freeSockets[name].push(socket)
-      
+
       // if an error happens while we don't use the socket anyway, meh, throw the socket away
       var onIdleError = function() {
         socket.destroy()
@@ -44363,7 +44363,7 @@ ForeverAgent.prototype.createConnection = net.createConnection
 ForeverAgent.prototype.addRequestNoreuse = Agent.prototype.addRequest
 ForeverAgent.prototype.addRequest = function(req, host, port) {
   var name = getConnectionName(host, port)
-  
+
   if (typeof host !== 'string') {
     var options = host
     port = options.port
@@ -44392,7 +44392,7 @@ ForeverAgent.prototype.removeSocket = function(s, name, host, port) {
     delete this.sockets[name]
     delete this.requests[name]
   }
-  
+
   if (this.freeSockets[name]) {
     var index = this.freeSockets[name].indexOf(s)
     if (index !== -1) {
@@ -47651,8 +47651,8 @@ var validate = exports._validate = function(/*Any*/instance,/*Object*/schema,/*O
 			if(typeof instance != 'object' || instance instanceof Array){
 				errors.push({property:path,message:"an object is required"});
 			}
-			
-			for(var i in objTypeDef){ 
+
+			for(var i in objTypeDef){
 				if(objTypeDef.hasOwnProperty(i)){
 					var value = instance[i];
 					// skip _not_ specified properties
@@ -47859,26 +47859,26 @@ var at, // The index of the current character
             text:    text
         };
     },
-    
+
     next = function (c) {
         // If a c parameter is provided, verify that it matches the current character.
         if (c && c !== ch) {
             error("Expected '" + c + "' instead of '" + ch + "'");
         }
-        
+
         // Get the next character. When there are no more characters,
         // return the empty string.
-        
+
         ch = text.charAt(at);
         at += 1;
         return ch;
     },
-    
+
     number = function () {
         // Parse a number value.
         var number,
             string = '';
-        
+
         if (ch === '-') {
             string = '-';
             next('-');
@@ -47912,14 +47912,14 @@ var at, // The index of the current character
             return number;
         }
     },
-    
+
     string = function () {
         // Parse a string value.
         var hex,
             i,
             string = '',
             uffff;
-        
+
         // When parsing for string values, we must look for " and \ characters.
         if (ch === '"') {
             while (next()) {
@@ -48076,7 +48076,7 @@ value = function () {
 
 module.exports = function (source, reviver) {
     var result;
-    
+
     text = source;
     at = 0;
     ch = ' ';
@@ -48131,7 +48131,7 @@ function quote(string) {
     // backslash characters, then we can safely slap some quotes around it.
     // Otherwise we must also replace the offending characters with safe escape
     // sequences.
-    
+
     escapable.lastIndex = 0;
     return escapable.test(string) ? '"' + string.replace(escapable, function (a) {
         var c = meta[a];
@@ -48149,47 +48149,47 @@ function str(key, holder) {
         mind = gap,
         partial,
         value = holder[key];
-    
+
     // If the value has a toJSON method, call it to obtain a replacement value.
     if (value && typeof value === 'object' &&
             typeof value.toJSON === 'function') {
         value = value.toJSON(key);
     }
-    
+
     // If we were called with a replacer function, then call the replacer to
     // obtain a replacement value.
     if (typeof rep === 'function') {
         value = rep.call(holder, key, value);
     }
-    
+
     // What happens next depends on the value's type.
     switch (typeof value) {
         case 'string':
             return quote(value);
-        
+
         case 'number':
             // JSON numbers must be finite. Encode non-finite numbers as null.
             return isFinite(value) ? String(value) : 'null';
-        
+
         case 'boolean':
         case 'null':
             // If the value is a boolean or null, convert it to a string. Note:
             // typeof null does not produce 'null'. The case is included here in
             // the remote chance that this gets fixed someday.
             return String(value);
-            
+
         case 'object':
             if (!value) return 'null';
             gap += indent;
             partial = [];
-            
+
             // Array.isArray
             if (Object.prototype.toString.apply(value) === '[object Array]') {
                 length = value.length;
                 for (i = 0; i < length; i += 1) {
                     partial[i] = str(i, value) || 'null';
                 }
-                
+
                 // Join all of the elements together, separated with commas, and
                 // wrap them in brackets.
                 v = partial.length === 0 ? '[]' : gap ?
@@ -48198,7 +48198,7 @@ function str(key, holder) {
                 gap = mind;
                 return v;
             }
-            
+
             // If the replacer is an array, use it to select the members to be
             // stringified.
             if (rep && typeof rep === 'object') {
@@ -48224,7 +48224,7 @@ function str(key, holder) {
                     }
                 }
             }
-            
+
         // Join all of the member texts together, separated with commas,
         // and wrap them in braces.
 
@@ -48240,7 +48240,7 @@ module.exports = function (value, replacer, space) {
     var i;
     gap = '';
     indent = '';
-    
+
     // If the space parameter is a number, make an indent string containing that
     // many spaces.
     if (typeof space === 'number') {
@@ -48260,7 +48260,7 @@ module.exports = function (value, replacer, space) {
     && (typeof replacer !== 'object' || typeof replacer.length !== 'number')) {
         throw new Error('JSON.stringify');
     }
-    
+
     // Make a fake root object containing our value under the key of ''.
     // Return the result of stringifying the value.
     return str('', {'': value});
@@ -56761,7 +56761,7 @@ function compare (a, b) {
 }
 
 function generateBase (httpMethod, base_uri, params) {
-  // adapted from https://dev.twitter.com/docs/auth/oauth and 
+  // adapted from https://dev.twitter.com/docs/auth/oauth and
   // https://dev.twitter.com/docs/auth/creating-signature
 
   // Parameter normalization
@@ -57047,7 +57047,7 @@ Collection.prototype.create = function(options) {
 
 /**
  * Reload a Collection
- * 
+ *
  * @param {String} name - Name of the Collection to be reloaded
  *
  * @return {Collection}
@@ -57065,7 +57065,7 @@ Collection.prototype.reload = function(name) {
 
 /**
  * Split a shard
- * 
+ *
  * @param {Object} options - Options for splitting the shard
  * @param {String} collection - Name of the Collection that includes the shard to be split
  * @param {String} shard - Name of the shard to be split
@@ -57105,7 +57105,7 @@ Collection.prototype.splitShard = function(options) {
 /**
  * Create a shard
  * Can only be used for collections that use the 'implicit' router. Use SPLITSHARD for the `compositId` router.
- * 
+ *
  * @param {Object} options - Options for creating the shard
  * @param {String} collection - Name of the Collection where the shard should be created
  * @param {String} shard - Name of the shard to be created
@@ -57128,7 +57128,7 @@ Collection.prototype.createShard = function(options) {
 
 /**
  * Delete a shard
- * 
+ *
  * @param {Object} options - Options for deleting the shard
  * @param {String} collection - Name of the Collection that includes the shard to be deleted
  * @param {String} shard - Name of the shard to be deleted
@@ -57151,7 +57151,7 @@ Collection.prototype.deleteShard = function(options) {
 
 /**
  * Create/ Modify alias for a collection
- * 
+ *
  * @param {Object} options - Options for creation of the collection alias.
  * @param {String} name - The alias name to be created.
  * @param {String|Array} collections - A comma separated list of collections to be aliased. If an array is provided, it will be joined by commas.
@@ -57178,7 +57178,7 @@ Collection.prototype.createAlias = function(options) {
 
 /**
  * Delete a collection alias
- * 
+ *
  * @param {String} name - Name of the alias to delete
  *
  * @return {Collection}
@@ -57214,7 +57214,7 @@ Collection.prototype.delete = function(name) {
 
 /**
  * Delete a replica
- * 
+ *
  * @param {Object} options - Options for deleting the replica
  * @param {String} collection - Name of the Collection that includes the replica to be deleted
  * @param {String} shard - Name of the shard that includes the replica to be deleted
@@ -57245,7 +57245,7 @@ Collection.prototype.deleteReplica = function(options) {
 
 /**
  * Add replica
- * 
+ *
  * @param {Object} options - Options for adding the replica
  * @param {String} collection - Name of the Collection
  * @param {String} shard - Name of the shard to which the replica will be added
@@ -57280,7 +57280,7 @@ Collection.prototype.addReplica = function(options) {
 
 /**
  * Cluster Properties
- * 
+ *
  * @param {Object} options - Options for cluster properties
  * @param {String} name - Name of the property. Two supported properties are 'urlScheme' and 'autoAddReplicas.' Others will be rejected by Solr.
  * @param {String} val - Value of the property. If the value is empty or null, the property is unset.
@@ -57303,7 +57303,7 @@ Collection.prototype.clusterProp = function(options) {
 
 /**
  * Migrate documents to another collection
- * 
+ *
  * @param {Object} options - Options for document migration
  * @param {String} collection - Name of the source collection from which documents will be split.
  * @param {String} targetCollection - Name of the target collection to which documents will be migrated.
@@ -57338,7 +57338,7 @@ Collection.prototype.migrate = function(options) {
 
 /**
  * Add Role
- * 
+ *
  * @param {Object} options - Options for adding the role
  * @param {String} role - Name of role. Only current supported role is 'overseer'
  * @param {String} node - Name of the node.
@@ -57362,7 +57362,7 @@ Collection.prototype.addRole = function(options) {
 /**
  * Remove Role
  * Undo roles assigned using ADDROLE operation
- * 
+ *
  * @param {Object} options - Options for removing the role
  * @param {String} role - Name of role. Only current supported role is 'overseer'
  * @param {String} node - Name of the node.
@@ -57443,7 +57443,7 @@ Collection.prototype.list = function() {
 
 /**
  * Add Replica property
- * 
+ *
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection this replica belongs to.
  * @param {String} shard - Name of the shard the replica belongs to.
@@ -57482,7 +57482,7 @@ Collection.prototype.addReplicaProp = function(options) {
 
 /**
  * Delete Replica property
- * 
+ *
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection this replica belongs to.
  * @param {String} shard - Name of the shard the replica belongs to.
@@ -57513,7 +57513,7 @@ Collection.prototype.deleteReplicaProp = function(options) {
 
 /**
  * Balance a property
- * 
+ *
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection to balance the property in.
  * @param {String} property - The property to balance
@@ -57545,7 +57545,7 @@ Collection.prototype.balanceShardUnique = function(options) {
 
 /**
  * Rebalance leaders
- * 
+ *
  * @param {Object} options - Options for replica property
  * @param {String} collection - Name of collection to rebalance preferredLeaders on.
  * @param {Number} [maxAtOnce] - The maximum number of reassignments to have queue up at once.
@@ -65226,7 +65226,7 @@ module.exports={
                 "$data": {
                     "type": "string",
                     "anyOf": [
-                        { "format": "relative-json-pointer" }, 
+                        { "format": "relative-json-pointer" },
                         { "format": "json-pointer" }
                     ]
                 }
@@ -65785,8 +65785,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":138,"assert":16,"stream":174,"util":186}],288:[function(require,module,exports){
 
 /*!
  *  Copyright 2010 LearnBoost <dev@learnboost.com>
@@ -65816,7 +65816,7 @@ var crypto = require('crypto')
  * Valid keys.
  */
 
-var keys = 
+var keys =
   [ 'acl'
   , 'location'
   , 'logging'
@@ -65855,7 +65855,7 @@ module.exports.authorization = authorization
  * @param {Object} options
  * @return {String}
  * @api private
- */ 
+ */
 
 function hmacSha1 (options) {
   return crypto.createHmac('sha1', options.secret).update(options.message).digest('base64')
@@ -65864,8 +65864,8 @@ function hmacSha1 (options) {
 module.exports.hmacSha1 = hmacSha1
 
 /**
- * Create a base64 sha1 HMAC for `options`. 
- * 
+ * Create a base64 sha1 HMAC for `options`.
+ *
  * @param {Object} options
  * @return {String}
  * @api private
@@ -65878,10 +65878,10 @@ function sign (options) {
 module.exports.sign = sign
 
 /**
- * Create a base64 sha1 HMAC for `options`. 
+ * Create a base64 sha1 HMAC for `options`.
  *
  * Specifically to be used with S3 presigned URLs
- * 
+ *
  * @param {Object} options
  * @return {String}
  * @api private
@@ -65897,7 +65897,7 @@ module.exports.signQuery= signQuery
  * Return a string for sign() with the given `options`.
  *
  * Spec:
- * 
+ *
  *    <verb>\n
  *    <md5>\n
  *    <content-type>\n
@@ -65913,7 +65913,7 @@ module.exports.signQuery= signQuery
 function stringToSign (options) {
   var headers = options.amazonHeaders || ''
   if (headers) headers += '\n'
-  var r = 
+  var r =
     [ options.verb
     , options.md5
     , options.contentType
@@ -65929,7 +65929,7 @@ module.exports.queryStringToSign = stringToSign
  * for S3 presigned URLs
  *
  * Spec:
- * 
+ *
  *    <date>\n
  *    <resource>
  *
@@ -67529,8 +67529,8 @@ module.exports = {
 
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":354,"util":186}],314:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":314,"assert-plus":287,"crypto":63,"http":175,"jsprim":231,"sshpk":354,"util":186}],314:[function(require,module,exports){
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
 var assert = require('assert-plus');
@@ -76693,8 +76693,8 @@ Key._oldVersionDetect = function (obj) {
 	return ([1, 0]);
 };
 
-}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":336,"./dhe":338,"./ed-compat":339,"./errors":340,"./fingerprint":341,"./formats/auto":342,"./formats/dnssec":343,"./formats/pem":345,"./formats/pkcs1":346,"./formats/pkcs8":347,"./formats/rfc4253":348,"./formats/ssh":350,"./formats/ssh-private":349,"./private-key":356,"./signature":357,"./utils":359,"assert-plus":196,"crypto":63}],356:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v8.6.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":336,"./dhe":338,"./ed-compat":339,"./errors":340,"./fingerprint":341,"./formats/auto":342,"./formats/dnssec":343,"./formats/pem":345,"./formats/pkcs1":346,"./formats/pkcs8":347,"./formats/rfc4253":348,"./formats/ssh":350,"./formats/ssh-private":349,"./private-key":356,"./signature":357,"./utils":359,"assert-plus":196,"crypto":63}],356:[function(require,module,exports){
 // Copyright 2017 Joyent, Inc.
 
 module.exports = PrivateKey;
@@ -79921,35 +79921,30 @@ Store.prototype.getAllCookies = function(cb) {
 
 },{}],368:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      "tough-cookie@2.3.4",
-      "/Users/tiscal95/git_http/search_engine_movies"
-    ]
-  ],
-  "_from": "tough-cookie@2.3.4",
+  "_from": "tough-cookie@~2.3.3",
   "_id": "tough-cookie@2.3.4",
   "_inBundle": false,
   "_integrity": "sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==",
   "_location": "/tough-cookie",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "tough-cookie@2.3.4",
+    "raw": "tough-cookie@~2.3.3",
     "name": "tough-cookie",
     "escapedName": "tough-cookie",
-    "rawSpec": "2.3.4",
+    "rawSpec": "~2.3.3",
     "saveSpec": null,
-    "fetchSpec": "2.3.4"
+    "fetchSpec": "~2.3.3"
   },
   "_requiredBy": [
     "/request",
     "/solr-client/request"
   ],
   "_resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz",
-  "_spec": "2.3.4",
-  "_where": "/Users/tiscal95/git_http/search_engine_movies",
+  "_shasum": "ec60cee38ac675063ffc97a5c18970578ee83655",
+  "_spec": "tough-cookie@~2.3.3",
+  "_where": "/Users/denisebuder/Documents/FH/4.Semester/semantic-web-technologies/browserify-test/node_modules/request",
   "author": {
     "name": "Jeremy Stashewsky",
     "email": "jstashewsky@salesforce.com"
@@ -79957,6 +79952,7 @@ module.exports={
   "bugs": {
     "url": "https://github.com/salesforce/tough-cookie/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Alexander Savin"
@@ -79980,6 +79976,7 @@ module.exports={
   "dependencies": {
     "punycode": "^1.4.1"
   },
+  "deprecated": false,
   "description": "RFC6265 Cookies and Cookie Jar for node.js",
   "devDependencies": {
     "async": "^1.4.2",
@@ -83448,8 +83445,19 @@ window.getResults = function(searchString, genres){
   console.log(opt.searchTerms)
   if (opt.searchTerms.length != 0) {
     opt.searchTerms.forEach(term => {
-      qb.where('prim_txt_en').equals(term)
-      qb.where('orig_txt_en').equals(term)
+      qb.begin()
+            .where('prim_txt_en').in(term)
+            .or()
+            .begin()
+              .where('orig_txt_en').in(term)
+            .end()
+            .or()
+            .begin()
+              .where('start_year_txt_en').in(term)
+            .end()
+          .end();
+      //qb.where('prim_txt_en').equals(term)
+      //qb.where('orig_txt_en').equals(term)
     })
     if(opt.genresTerms.length != 0) {
       opt.genresTerms.forEach(term => {
@@ -83470,8 +83478,10 @@ window.getResults = function(searchString, genres){
           .start(0)
           .rows(100);
 
+          console.log(query);
+
   qb = new SolrQueryBuilder();
-  
+
           // .q({prim_txt_en : searchString , orig_txt_en : searchString})
           // .qf({ prim_txt_en: 0.8, orig_txt_en: 0.8, start_year_txt_en: 0.2, genres_txt_sort: 0.2 })
           // .start(0)
@@ -83526,4 +83536,5 @@ window.toggleCheck = function(box) {
     box.checked = false;
   }
 }
+
 },{"solr-client":245,"solr-query-builder":334,"word-count":377}]},{},[378]);

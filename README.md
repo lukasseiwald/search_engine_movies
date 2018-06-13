@@ -14,7 +14,7 @@ Verwendung von IMDb Datasets - title.basics: https://www.imdb.com/interfaces/
 
 ```bin/solr -e schemaless```
 
-```in solr einmal spellcheck.build ausführen (zB in Query spellcheck und spellcheck.build aktivieren und ausführen)``` 
+```in solr einmal spellcheck.build ausführen (zB in Query spellcheck und spellcheck.build aktivieren und ausführen)```
 
 ```http://localhost:8983/solr/#/ ```
 
